@@ -1,14 +1,40 @@
-// Import a module
+const url = require('url')
 const http = require('http')
+const qs = require('querystring')
 
-// Declare an http server
-http.createServer(function (req, res) {
+const content = '<!DOCTYPE html>' +
+'<html>' +
+'    <head>' +
+'        <meta charset="utf-8" />' +
+'        <title>ECE AST</title>' +
+'    </head>' + 
+'    <body>' +
+'       <p>Hello World!</p>' +
+'       <a>Salut a tous c\'est l\'alien<a>' +
+'    </body>' +
+'</html>'
 
-  // Write a response header
-  res.writeHead(200, {'Content-Type': 'text/plain'})
+const serverHandle = function (req, res) {
 
-  // Write a response content
-  res.end('Hello World\n')
+  // Retrieve and print the current path
+  const path = url.parse(req.url).pathname
 
-// Start the server
-}).listen(8080)
+  // Retrieve and print query parameters
+  const queryParams = qs.parse(url.parse(req.url).query)
+
+  res.writeHead(200, {'Content-Type': 'text/html'})
+
+  // Display the content
+  res.write(content)
+
+  // Display the Path
+  console.log(path)
+
+
+
+  res.end()
+}
+
+http
+.createServer(serverHandle)
+.listen(8080)

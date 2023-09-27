@@ -8,7 +8,7 @@ git clone https://github.com/thetotobalgo/ece-webtech-2023-fall-gr04-04.git
 ```
 
 ## Navigate the project directory
-### For exmaple :
+### For example :
 ```
 cd lab/lab3/
 ```

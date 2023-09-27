@@ -3,9 +3,13 @@
 ECE Webtech course project
 
 ## Installation
-
 ```
 git clone https://github.com/thetotobalgo/ece-webtech-2023-fall-gr04-04.git
+```
+
+## Navigate the project directory
+```
+cd lab/lab3
 ```
 
 ## Authors

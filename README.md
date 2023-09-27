@@ -8,8 +8,9 @@ git clone https://github.com/thetotobalgo/ece-webtech-2023-fall-gr04-04.git
 ```
 
 ## Navigate the project directory
+### For exmaple :
 ```
-cd lab/lab3
+cd lab/lab3/
 ```
 
 ## Authors

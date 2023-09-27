@@ -1,4 +1,18 @@
 # ece-webtech-gr04-04
-Bakir Ballet Bouaich
+
+ECE Webtech course project
+
+## Installation
+
+```
+npm install
+```
+
+## Authors
+
+- Ballet
+- Bouaich
+- Bakir  
+
 
 

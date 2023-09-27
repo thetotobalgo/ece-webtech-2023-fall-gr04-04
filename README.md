@@ -5,7 +5,7 @@ ECE Webtech course project
 ## Installation
 
 ```
-npm install
+git clone https://github.com/thetotobalgo/ece-webtech-2023-fall-gr04-04.git
 ```
 
 ## Authors

@@ -13,10 +13,9 @@ cd lab/lab3
 ```
 
 ## Authors
-
-- Ballet
-- Bouaich
-- Bakir  
+- Thayri Bouaich
+- Mohamed Bakir  
+- Tom Ballet
 
 
 

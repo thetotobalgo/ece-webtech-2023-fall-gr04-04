@@ -1,5 +1,5 @@
-## Mac
+.*
+!.gitignore
+node_modules
 .DS_Store
-
-## VSCode
 .vscode

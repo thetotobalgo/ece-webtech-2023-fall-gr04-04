@@ -9,7 +9,7 @@
     "dev": "nodemon index.js"
   },
   "keywords": [],
-  "author": "Elanore Lelievre,Noé Pham, Solveig Berling",
+  "author": "STT",
   "license": "ISC",
   "dependencies": {
     "nodemon": "^3.0.1"

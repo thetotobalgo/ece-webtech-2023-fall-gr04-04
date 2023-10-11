@@ -1,30 +1,6 @@
-# ece-webtech-gr04-04
+# LAB02
 
-ECE Webtech course project
-
-## Installation
+## Run the project
 ```
-git clone https://github.com/thetotobalgo/ece-webtech-2023-fall-gr04-04.git
+npm run start
 ```
-
-## Navigate the project directory to run a project
-### For example :
-```
-cd lab/lab3/
-```
-```
-npm start
-```
-
-## temporary lab4
-
-https://github.com/thetotobalgo/lab4-web-tmp
-
-
-## Authors
-- Thayri Bouaich
-- Mohamed Bakir  
-- Tom Ballet
-
-
-

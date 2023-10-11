@@ -1,6 +1,22 @@
-# LAB02
 
-## Run the project
+# ECE Web Technologies Corrections
+
+A simple web server written in Node.js.
+
+## Installation
+
+Install application:
+
 ```
-npm run start
+npm install 
 ```
+
+## Usage
+
+Start a web server with the command:
+
+```
+npm start
+```
+
+

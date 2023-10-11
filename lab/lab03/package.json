@@ -1,17 +1,21 @@
 {
-  "name": "ece-webtech-2023-fall-gr04-04",
-  "version": "1.0.0",
-  "description": "",
+  "name": "ece-webtech",
+  "version": "0.0.0",
+  "description": "ECE Web Technologies",
   "main": "index.js",
   "scripts": {
-    "test": "echo  && exit 1",
-    "start": "node index.js",
-    "dev": "nodemon index.js"
+    "dev": "nodemon src/index.js",
+    "start": "node src/index.js"
   },
-  "keywords": [],
-  "author": "STT",
-  "license": "ISC",
+  "author": "Sergei Kudinov",
+  "license": "UNLICENSED",
   "dependencies": {
-    "nodemon": "^3.0.1"
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "mocha": "^10.2.0",
+    "nodemon": "^3.0.1",
+    "supertest": "^6.3.3"
   }
 }

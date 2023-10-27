@@ -1,6 +1,8 @@
-import { fetchServerResponse } from "next/dist/client/components/router-reducer/fetch-server-response";
+import React from 'react';
+import Header from '../components/header';
 
-export default function Profile() {
+
+export default function Profile({profile}) {
     return (
         <div>
 
@@ -19,7 +21,7 @@ export default function Profile() {
 
 export async function getServerSideProps() {
     const response = await fetch('https://localhost:3000/api/profile');
-    if(response.status ==200) {
+    if(response.status == 200) {
         const profile = await response.json();
         return {props:{profile}};
     }
@@ -28,5 +30,3 @@ export async function getServerSideProps() {
     }
     
 }
-
-export default Profile;

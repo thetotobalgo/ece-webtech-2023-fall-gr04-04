@@ -5,14 +5,14 @@ export default function Profile() {
         <div>
 
             <Header />
-            {profile ? {
+            {profile ? (
                 <div>
                 <p>username : {profile.username}</p>
                 <p>email : {profile.email}</p>
                 </div>
-            } : {
+             ) : (
                 <p>Wait...</p>
-            }}
+            )}
         </div>
     );
 }

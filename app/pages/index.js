@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from '../components/header';
 
+
 export default function Home() {
   return (
 
@@ -10,7 +11,7 @@ export default function Home() {
       <img src='/face.jpg'></img>
 
       <section>
-        <h1>Welcome to our lab4 app</h1>
+        <h1>Welcome to our lab6 app</h1>
       </section>
 
     </main>

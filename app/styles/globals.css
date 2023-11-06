@@ -1,31 +1,21 @@
-header {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-  margin-top: 20px;
-  gap: 3rem;
+/* styles/globals.css */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
-section {
-  width: 100%;
-  height: 100vh;
-
-
-
+#__next {
+  min-height: 100%;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
 }
 
-img {
-  width: 100%;
+main {
+  flex: 1;
   height: 100vh;
-
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -1;
-
 }

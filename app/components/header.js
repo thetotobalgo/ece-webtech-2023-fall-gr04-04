@@ -50,6 +50,10 @@ const Header = () => {
                         About
                     </span>
                 </div>
+                <Link href="/login-test">
+                <p className="text-blue-500">Login</p>
+              </Link>
+              
                 {profile ? (
                     <div className="text-white text-right">
                         <p className="text-xl">Username: {profile.name}</p>

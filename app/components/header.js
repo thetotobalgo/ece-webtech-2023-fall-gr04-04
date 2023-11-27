@@ -1,70 +1,85 @@
-import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
+import Image from 'next/image';
+import { useState, useEffect } from 'react';
+import { supabase } from '../utils/supabaseClient';
+import md5 from 'md5'; // Import the md5 library
 
 const Header = () => {
-    const [profile, setProfile] = useState(null);
-    const router = useRouter();
+  const [user, setUser] = useState(null);
 
-    useEffect(() => {
-        async function fetchData() {
-            try {
-                const response = await fetch('/api/profile');
-                if (response.status === 200) {
-                    const data = await response.json();
-                    setProfile(data);
-                } else {
-                    console.error('Profile data request failed with status:', response.status);
-                }
-            } catch (error) {
-                console.error('Error while fetching profile:', error);
-            }
-        }
-        fetchData();
-    }, []);
+  useEffect(() => {
+    const session = supabase.auth.getSession();
+    setUser(session?.user || null);
 
-    const navigateTo = (path) => {
-        router.push(path);
+    const { data: authListener } = supabase.auth.onAuthStateChange((event, session) => {
+      setUser(session?.user || null);
+    });
+
+    // Cleanup the listener when the component unmounts
+    return () => {
+      if (authListener?.unsubscribe) {
+        authListener.unsubscribe();
+      }
     };
+  }, []);
 
-    return (
-        <header className="bg-gray-500 py-4">
-            <div className="container mx-auto flex justify-between items-center">
-                <div>
-                    <span
-                        className="text-white text-2xl font-bold cursor-pointer"
-                        onClick={() => navigateTo('/')}
-                    >
-                        Home
-                    </span>
-                    <span
-                        className="text-white text-2xl font-bold ml-4 cursor-pointer"
-                        onClick={() => navigateTo('/articles')}
-                    >
-                        Articles
-                    </span>
-                    <span
-                        className="text-white text-2xl font-bold ml-4 cursor-pointer"
-                        onClick={() => navigateTo('/articles')}
-                    >
-                        About
-                    </span>
-                </div>
-                <Link href="/login-test">
-                <p className="text-blue-500">Login</p>
-              </Link>
-              
-                {profile ? (
-                    <div className="text-white text-right">
-                        <p className="text-xl">Username: {profile.name}</p>
-                        <p className="text-xl">Email: {profile.email}</p>
-                    </div>
-                ) : (
-                    <p className="text-white text-lg">Loading profile data...</p>
-                )}
+  const signOut = async () => {
+    await supabase.auth.signOut();
+    setUser(null); // reset user to null on sign out
+  };
+
+  // Function to generate Gravatar URL based on user's email
+  const getGravatarUrl = (email) => {
+    const hash = md5(email.trim().toLowerCase());
+    return `https://www.gravatar.com/avatar/${hash}`;
+  };
+
+  return (
+    <header className="bg-gray-100">
+      <nav className="container mx-auto px-4 py-3 flex justify-between items-center">
+        <div className="flex items-center"> {/* Use a flex container for horizontal alignment */}
+          <Link href="/">
+            <span>
+              <Image 
+                src="/logo.png" 
+                alt="Surf News Logo" 
+                width={100}
+                height={50}
+              />
+            </span>
+          </Link>
+          <Link href="/">
+            <span className="text-gray-800 hover:text-gray-600 px-3 cursor-pointer">Home</span>
+          </Link>
+          <Link href="/articles">
+            <span className="text-gray-800 hover:text-gray-600 px-3 cursor-pointer">Articles</span>
+          </Link>
+          <Link href="/about">
+            <span className="text-gray-800 hover:text-gray-600 px-3 cursor-pointer">About</span>
+          </Link>
+        </div>
+        <div className="flex items-center"> 
+          {user ? (
+            <div className="flex items-center">
+              <img
+                src={getGravatarUrl(user.email)}
+                alt="Gravatar"
+                className="w-8 h-8 rounded-full mr-2"
+              />
+              {/* <span className="text-gray-800 px-3">{user.email}</span> */}
+              <button onClick={signOut} className="text-gray-800 hover:text-gray-600 px-3 cursor-pointer">
+                Log out
+              </button>
             </div>
-        </header>
-    );
+          ) : (
+            <Link href="/login">
+              <span className="text-gray-800 hover:text-gray-600 px-3 cursor-pointer">Login</span>
+            </Link>
+          )}
+        </div>
+      </nav>
+    </header>
+  );
 };
 
 export default Header;

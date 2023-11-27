@@ -3,4 +3,11 @@ const nextConfig = {
   reactStrictMode: true,
 }
 
-module.exports = nextConfig
+// next.config.js
+module.exports = {
+  images: {
+    domains: ['picsum.photos'],
+  },
+  // ... other Next.js config
+}
+

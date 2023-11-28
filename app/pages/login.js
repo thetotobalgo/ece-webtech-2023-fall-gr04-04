@@ -1,63 +1,55 @@
 // pages/login.js
-import React from 'react';
-
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useRouter } from 'next/router'; // Import useRouter from next/router
 import { supabase } from '../utils/supabaseClient';
-import { Auth } from '@supabase/auth-ui-react'
-import { ThemeSupa } from '@supabase/auth-ui-shared'
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import { Auth } from '@supabase/auth-ui-react';
+import { ThemeSupa } from '@supabase/auth-ui-shared';
+import Layout from '../components/Layout';
+
 
 export default function Login() {
-  const [session, setSession] = useState(null)
+  const [session, setSession] = useState(null);
+  const router = useRouter(); // Initialize useRouter hook
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data: { session } }) => {
-      setSession(session)
-    })
+      setSession(session);
+      if (session) {
+        // If there is a session, navigate to the index page
+        router.push('/');
+      }
+    });
 
-    const {
-      data: { subscription },
-    } = supabase.auth.onAuthStateChange((_event, session) => {
-      setSession(session)
-    })
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+      setSession(session);
+      if (session) {
+        // If there is a session, navigate to the index page
+        router.push('/');
+      }
+    });
 
-    return () => subscription.unsubscribe()
-  }, [])
+    return () => subscription.unsubscribe();
+  }, []);
 
   async function signOut() {
-    const { error } = await supabase.auth.signOut()
+    const { error } = await supabase.auth.signOut();
   }
 
   if (!session) {
     return (
-      <div className="flex flex-col min-h-screen">
-        <Header />
-        <main className="flex-grow container mx-auto px-4 py-8">
-
-
-          <Auth
-            supabaseClient={supabase}
-            appearance={{ theme: ThemeSupa }}
-            providers={['github']}
-          />
-
-
-        </main>
-        <Footer />
-      </div>)
-
-
-  }
-  else {
+      <Layout>
+        <Auth
+          supabaseClient={supabase}
+          appearance={{ theme: ThemeSupa }}
+          providers={['github']}
+        />
+      </Layout>
+    );
+  } else {
     return (
-    
       <div>
-
-      Logged in!
-      
-    </div>)
-    
-
+        Logged in!
+      </div>
+    );
   }
 }

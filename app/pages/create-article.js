@@ -95,7 +95,7 @@ export default function CreateArticle() {
                 </div>
                 <div>
                     <label className="block mb-2 text-sm font-medium text-gray-700">
-                        Slug
+                        Tags
                         <textarea
                             name="slug"
                             value={slug}

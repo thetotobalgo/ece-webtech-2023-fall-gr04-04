@@ -1,103 +1,3 @@
-{/*import Link from 'next/link';
-import Image from 'next/image';
-import { useState, useEffect } from 'react';
-import { supabase } from '../utils/supabaseClient';
-import md5 from 'md5';
-
-const Header = () => {
-  const [user, setUser] = useState(null);
-
-  useEffect(() => {
-    const session = supabase.auth.getSession();
-    setUser(session?.user || null);
-
-    const { data: authListener } = supabase.auth.onAuthStateChange((event, session) => {
-      setUser(session?.user || null);
-    });
-
-    return () => {
-      if (authListener?.unsubscribe) {
-        authListener.unsubscribe();
-      }
-    };
-  }, []);
-
-  const signOut = async () => {
-    await supabase.auth.signOut();
-    setUser(null); // reset user to null on sign out
-  };
-
-  // Function to generate Gravatar URL based on user's email
-  const getGravatarUrl = (email) => {
-    const hash = md5(email.trim().toLowerCase());
-    return `https://www.gravatar.com/avatar/${hash}`;
-  };
-
-  return (
-    <header className="bg-gray-100">
-      <nav className="container mx-auto px-4 py-3 flex justify-between items-center">
-        <div className="flex items-center">
-        <Link href="/">
-        <span>
-          <Image
-            src="/logo.png"
-            alt="Surf News Logo"
-            width={100}
-            height={50}
-          />
-        </span>
-      </Link>
-      <Link href="/">
-        <span className="text-gray-800 hover:text-gray-600 px-3 cursor-pointer">Home</span>
-      </Link>
-      <Link href="/articles">
-        <span className="text-gray-800 hover:text-gray-600 px-3 cursor-pointer">Articles</span>
-      </Link>
-      <Link href="/about">
-        <span className="text-gray-800 hover:text-gray-600 px-3 cursor-pointer">About</span>
-      </Link>
-      <div className="flex items-center">
-        <form className="flex items-center">
-          <input
-            type="text"
-            placeholder="Search..."
-            className="px-2 py-1 border rounded-l"
-
-          />
-          
-        </form>
-      </div>
-    </div>
-    <div className="flex items-center">
-      {user ? (
-        <div className="flex items-center">
-
-          <button onClick={signOut} className="text-gray-800 hover:text-gray-600 px-3 cursor-pointer">
-            Log out
-          </button>
-          <Link href="/profile">
-            <img
-              src={getGravatarUrl(user.email)}
-              alt="Gravatar"
-              className="w-8 h-8 rounded-full mr-2"
-            />
-          </Link>
-        </div>
-      ) : (
-        <Link href="/login">
-          <span className="text-gray-800 hover:text-gray-600 px-3 cursor-pointer">Login</span>
-        </Link>
-      )}
-    </div>
-  </nav>
-</header>
-);
-};
-
-export default Header;*/}
-
-
-
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
@@ -160,7 +60,7 @@ const Header = () => {
     <header className="bg-gray-100">
       <nav className="container mx-auto px-4 py-3 flex justify-between items-center">
 
-        <div className="flex items-center">
+        <div className="relative flex items-center"> {/* Relative positioning added here */}
           <Link href="/">
             <span>
               <Image
@@ -181,6 +81,8 @@ const Header = () => {
             <span className="text-gray-800 hover:text-gray-600 px-3 cursor-pointer">About</span>
           </Link>
 
+          
+
           <form className="flex items-center" onSubmit={(e) => e.preventDefault()}>
             <input
               type="text"
@@ -200,10 +102,7 @@ const Header = () => {
               ))}
             </div>
           )}
-
-
         </div>
-
 
         <div className="flex items-center">
           {user ? (
@@ -233,3 +132,4 @@ const Header = () => {
 
 export default Header;
 
+   

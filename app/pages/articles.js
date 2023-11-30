@@ -46,7 +46,7 @@ export default function Articles() {
                 </button>
             </div>
         )}
-        <div style={{ overflowY: 'scroll', maxHeight: '50vh' }}>
+        <div style={{ overflowY: 'scroll', maxHeight: '60vh' }}>
             <ul className="list-none space-y-4">
                 {articles.map(article => (
                     <li key={article.id} className="border-b border-gray-200 py-4">

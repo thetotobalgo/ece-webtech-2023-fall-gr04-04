@@ -32,7 +32,6 @@ export default function Article() {
     };
   }, [slug]);
 
-
   const fetchArticle = async () => {
     const { data, error } = await supabase
       .from('articles')
@@ -69,8 +68,6 @@ export default function Article() {
     }
   };
 
-
-
   const handleCommentSubmit = (e) => {
     e.preventDefault();
     postComment();
@@ -89,11 +86,8 @@ export default function Article() {
   return (
     <Layout>
       <article>
-
         <h1 className="text-4xl font-bold my-4">{article.title}</h1>
-        <div className="prose lg:prose-xl">
-          <p>{article.content}</p>
-        </div>
+        <div className="prose lg:prose-xl" dangerouslySetInnerHTML={{ __html: article.content }}></div>
 
         <section className="mt-10">
           <div style={{ overflowY: 'scroll', maxHeight: '50vh' }}>
@@ -130,7 +124,6 @@ export default function Article() {
             </form>
           )}
         </section>
-
       </article>
     </Layout>
   );

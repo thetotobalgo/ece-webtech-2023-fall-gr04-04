@@ -85,12 +85,12 @@ export default function Article() {
 
   return (
     <Layout>
-      <article>
+      <article style={{ overflowY: 'scroll', maxHeight: '75vh' }}>
         <h1 className="text-4xl font-bold my-4">{article.title}</h1>
         <div className="prose lg:prose-xl" dangerouslySetInnerHTML={{ __html: article.content }}></div>
 
         <section className="mt-10">
-          <div style={{ overflowY: 'scroll', maxHeight: '50vh' }}>
+          <div>
             <h2 className="text-2xl font-bold mb-4">Comments</h2>
             <div>
               {comments.map((comment, index) => (

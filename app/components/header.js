@@ -3,8 +3,10 @@ import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { supabase } from '../utils/supabaseClient';
 import md5 from 'md5';
+import { useTheme } from '../context/themeContext';
 
 const Header = () => {
+  const { theme, toggleTheme } = useTheme();
   const [user, setUser] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
   const [searchResults, setSearchResults] = useState([]);
@@ -57,10 +59,10 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-gray-100">
+    <header>
       <nav className="container mx-auto px-4 py-3 flex justify-between items-center">
 
-        <div className="relative flex items-center"> {/* Relative positioning added here */}
+        <div className="relative flex items-center">
           <Link href="/">
             <span>
               <Image
@@ -72,13 +74,16 @@ const Header = () => {
             </span>
           </Link>
           <Link href="/">
-            <span className="text-gray-800 hover:text-gray-600 px-3 cursor-pointer">Home</span>
+            <span className="hover:text-gray-600 px-3 cursor-pointer">Home</span>
           </Link>
           <Link href="/articles">
-            <span className="text-gray-800 hover:text-gray-600 px-3 cursor-pointer">Articles</span>
+            <span className="hover:text-gray-600 px-3 cursor-pointer">Articles</span>
+          </Link>
+          <Link href="/forecast">
+            <span className="hover:text-gray-600 px-3 cursor-pointer">Forecast</span>
           </Link>
           <Link href="/about">
-            <span className="text-gray-800 hover:text-gray-600 px-3 cursor-pointer">About</span>
+            <span className="hover:text-gray-600 px-3 cursor-pointer">About</span>
           </Link>
 
           
@@ -94,7 +99,7 @@ const Header = () => {
           </form>
 
           {searchResults.length > 0 && (
-            <div className="absolute bg-white border rounded">
+            <div className="absolute border rounded">
               {searchResults.map((article) => (
                 <Link key={article.slug} href={`/articles/${article.slug}`}>
                   <span className="block px-4 py-2 hover:bg-gray-100">{article.title}</span>
@@ -108,7 +113,7 @@ const Header = () => {
           {user ? (
             <div className="flex items-center">
 
-              <button onClick={signOut} className="text-gray-800 hover:text-gray-600 px-3 cursor-pointer">
+              <button onClick={signOut} className="hover:text-gray-600 px-3 cursor-pointer">
                 Log out
               </button>
               <Link href="/profile">
@@ -121,9 +126,10 @@ const Header = () => {
             </div>
           ) : (
             <Link href="/login">
-              <span className="text-gray-800 hover:text-gray-600 px-3 cursor-pointer">Login</span>
+              <span className="hover:text-gray-600 px-3 cursor-pointer">Login</span>
             </Link>
           )}
+          <button onClick={toggleTheme}>Night mode</button>
         </div>
       </nav>
     </header>

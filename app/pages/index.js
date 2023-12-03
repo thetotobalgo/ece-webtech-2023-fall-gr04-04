@@ -5,6 +5,7 @@ import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
 import { supabase } from '../utils/supabaseClient';
 
+
 export default function Home() {
   const [recentArticles, setRecentArticles] = useState([]);
   const [user, setUser] = useState(null);

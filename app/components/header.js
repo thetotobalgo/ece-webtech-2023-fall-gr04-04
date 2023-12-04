@@ -5,11 +5,14 @@ import { supabase } from '../utils/supabaseClient';
 import md5 from 'md5';
 import { useTheme } from '../context/themeContext';
 
+
 const Header = () => {
-  const { theme, toggleTheme } = useTheme();
   const [user, setUser] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
   const [searchResults, setSearchResults] = useState([]);
+
+  const { toggleTheme } = useTheme();
+
 
   useEffect(() => {
     const session = supabase.auth.getSession();

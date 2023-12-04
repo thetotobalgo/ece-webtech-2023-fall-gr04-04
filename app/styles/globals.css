@@ -2,16 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+/* styles.css or globals.css */
 
+.light {
+  /* Light theme styles */
+  background-color: white;
+  color: black;
+  /* Other light theme styles... */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-   
-  }
+.dark {
+  /* Dark theme styles */
+  background-color: black;
+  color: white;
+  /* Other dark theme styles... */
 }
 
-body {
- 
-}

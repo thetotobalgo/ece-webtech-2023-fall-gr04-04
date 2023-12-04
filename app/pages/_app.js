@@ -1,4 +1,5 @@
 import '@/styles/globals.css'
+
 import { ThemeProvider } from '../context/themeContext'; // Adjust the path as needed
 
 

@@ -1,5 +1,3 @@
-// pages/index.js
-import Head from 'next/head';
 import Layout from '../components/Layout';
 import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
@@ -61,7 +59,6 @@ export default function Home() {
           ))}
         </div>
       </section>
-      {/* Iframe commented out as before */}
     </Layout>
   );
 }

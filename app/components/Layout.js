@@ -11,6 +11,7 @@ export default function Layout({
 }) {
   const { theme } = useTheme();
 
+
   return (
     <>
       <Head>
@@ -19,18 +20,20 @@ export default function Layout({
         <link rel="icon" href="/logo.ico" />
       </Head>
 
-      <div className={`${theme.text} ${theme.background}`}>
-        <div className="flex flex-col min-h-screen bg-cover bg-center">
-          <Header />
+      <div className={theme}>
 
-          {/* Add horizontal padding for side margins, adjust px-4 to increase or decrease the margin */}
-          <main className="w-full flex-grow mx-auto bg-opacity-90 overflow-y-auto px-10" style={{ maxHeight: 'calc(100vh - var(--header-height) - var(--footer-height))' }}>
+        <div className="flex flex-col min-h-screen">
+          <Header />
+          <main className="w-full flex-grow mx-auto overflow-y-auto px-10" style={{ maxHeight: 'calc(100vh - var(--header-height) - var(--footer-height))' }}>
+
             {children}
           </main>
-
           <Footer />
         </div>
+
+
       </div>
     </>
-  )
+  );
+
 }

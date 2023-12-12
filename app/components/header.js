@@ -63,19 +63,10 @@ const Header = () => {
 
   return (
     <header>
-      <nav className="container mx-auto px-4 py-3 flex justify-between items-center">
+      <nav className="container mx-auto px-4 py-10 flex justify-between items-center">
 
         <div className="relative flex items-center">
-          <Link href="/">
-            <span>
-              <Image
-                src="/logo.png"
-                alt="Surf News Logo"
-                width={100}
-                height={50}
-              />
-            </span>
-          </Link>
+          
           <Link href="/">
             <span className="hover:text-gray-600 px-3 cursor-pointer">Home</span>
           </Link>
@@ -132,7 +123,12 @@ const Header = () => {
               <span className="hover:text-gray-600 px-3 cursor-pointer">Login</span>
             </Link>
           )}
-          <button onClick={toggleTheme}>Night mode</button>
+          <button 
+            onClick={toggleTheme} 
+            className="bg-blue-500 hover:bg-blue-700 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"
+        >
+            Night Mode
+        </button>
         </div>
       </nav>
     </header>

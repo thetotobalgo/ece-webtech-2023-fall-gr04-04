@@ -3,14 +3,12 @@ import Header from '../components/header.js';
 import Footer from '../components/footer.js';
 import { useTheme } from '../context/themeContext';
 
-
 export default function Layout({
   children,
   title = 'Digital Publishing Platform',
   description = 'A minimal digital publishing platform'
 }) {
   const { theme } = useTheme();
-
 
   return (
     <>
@@ -22,18 +20,16 @@ export default function Layout({
 
       <div className={theme}>
 
-        <div className="flex flex-col min-h-screen">
+        <div className="flex flex-col min-h-screen" style={{theme}}>
           <Header />
-          <main className="w-full flex-grow mx-auto overflow-y-auto px-10" style={{ maxHeight: 'calc(100vh - var(--header-height) - var(--footer-height))' }}>
+          <main className="w-full flex-grow mx-auto overflow-y-auto px-10" style={{ maxHeight: 'calc(100vh - var(--header-height) - var(--footer-height))'}}>
 
             {children}
           </main>
           <Footer />
         </div>
 
-
       </div>
     </>
   );
-
 }

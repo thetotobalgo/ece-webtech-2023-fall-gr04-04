@@ -4,6 +4,7 @@ import { supabase } from '../../utils/supabaseClient';
 import Layout from '../../components/Layout';
 import md5 from 'md5';
 
+
 export default function Article() {
   const router = useRouter();
   const { slug } = router.query;
@@ -15,7 +16,6 @@ export default function Article() {
   useEffect(() => {
     setUser(supabase.auth.getUser());
 
-    // Subscribe to auth state changes
     const { data: subscription } = supabase.auth.onAuthStateChange((_event, session) => {
       setUser(session?.user || null);
     });
@@ -24,7 +24,6 @@ export default function Article() {
       fetchArticle();
     }
 
-    // Unsubscribe on cleanup
     return () => {
       if (subscription?.unsubscribe) {
         subscription.unsubscribe();
@@ -58,7 +57,7 @@ export default function Article() {
     const { data, error } = await supabase
       .from('comments')
       .insert([{ article_id: article.id, content: newComment, email: user.email }])
-      .select(); // Add .select() to ensure all fields are returned
+      .select();
 
     if (error) {
       console.error('Error posting comment:', error);
@@ -88,6 +87,16 @@ export default function Article() {
       <article style={{ overflowY: 'scroll', maxHeight: '75vh' }}>
         <h1 className="text-4xl font-bold my-4">{article.title}</h1>
         <div className="prose lg:prose-xl" dangerouslySetInnerHTML={{ __html: article.content }}></div>
+        <section className="mt-10">
+        <div className="border-t pt-4 mt-4">
+          <h2 className="text-2xl font-bold mb-">Author</h2>
+          <img src={getGravatarUrl(article.email)} alt="Author Gravatar" className="w-8 h-8 rounded-full" />
+          <p className="text-sm text-gray-600">Article by: {article.email}</p>
+          <p className="text-sm text-gray-500">
+            Published on: {article.created_at ? new Date(article.created_at).toLocaleDateString() : 'Unknown date'}
+          </p>
+        </div>
+      </section>
 
         <section className="mt-10">
           <div>

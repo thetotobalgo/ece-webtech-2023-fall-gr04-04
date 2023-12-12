@@ -2,19 +2,39 @@
 @tailwind components;
 @tailwind utilities;
 
-/* styles.css or globals.css */
+
+
+/* LIDHT/DARK Class*/
+.light, .dark {
+  transition: background-color 0.5s, color 0.5s; /* Adjust the duration as needed */
+  /* ... other styles ... */
+}
 
 .light {
-  /* Light theme styles */
   background-color: white;
   color: black;
-  /* Other light theme styles... */
+  background-image: url('/bg5.png');
 }
 
 .dark {
-  /* Dark theme styles */
-  background-color: black;
+  background-color: rgb(114, 104, 104);
   color: white;
-  /* Other dark theme styles... */
+  background-image: url('/bg4.png');
 }
 
+
+
+
+/* Did not properly align so i found this solution for the WYSGWGSGSGWG*/
+
+.ql-align-right {
+	text-align: right;
+}
+.ql-align-center {
+	text-align: center;
+}
+.ql-align-left {
+	text-align: left;
+}
+
+/*-------*/

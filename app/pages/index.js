@@ -9,7 +9,6 @@ export default function Home() {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    // Fetch the current user session to check if someone is logged in
     const session = supabase.auth.getSession();
     setUser(session?.user || null);
 
@@ -21,7 +20,7 @@ export default function Home() {
       .from('articles')
       .select('*')
       .order('created_at', { ascending: false })
-      .limit(3); 
+      .limit(3);
 
     if (error) {
       console.error('Error fetching articles:', error);
@@ -39,22 +38,24 @@ export default function Home() {
       <section className="text-center my-10">
         <h1 className="text-4xl font-bold my-4">Welcome to Surf News</h1>
         <p className="text-xl my-4">Discover insightful articles about the discipline.</p>
-        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-          Get Started
-        </button>
+        <Link href="/articles">
+          <span className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            Get Started
+          </span>
+        </Link>
       </section>
 
-      <section>
+      <section className="text-center">
         <h2 className="text-3xl font-bold my-4">Recent Articles</h2>
         <div className="flex flex-wrap justify-between space-x-4">
           {recentArticles.map(article => (
             <article key={article.id} className="w-full md:w-1/2 lg:w-1/4">
               <h3 className="text-2xl font-semibold mb-1">
                 <Link href={`/articles/${article.slug}`}>
-                  <span className="text-blue-500 hover:text-blue-700">{article.title}</span>
+                  <span className="text-3xl hover:text-blue-700">{article.title}</span>
                 </Link>
               </h3>
-              <p className="text-gray-700">{article.description}</p>              
+              <p>{article.description}</p>
             </article>
           ))}
         </div>

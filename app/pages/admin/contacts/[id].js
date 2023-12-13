@@ -1,10 +1,16 @@
 import { useState, useEffect } from 'react';
-import { supabase } from '../../../utils/supabaseClient'; // Update the path as necessary
 import md from 'markdown-it';
 import Layout from '../../../components/Layout.js';
 
+import { useContext } from 'react';
+import UserContext from '../../../components/UserContext.js';
+
+
 export default function Contacts({ id }) {
   const [contact, setContact] = useState(null);
+
+  const { supabase } = useContext(UserContext);
+
 
   useEffect(() => {
     (async () => {

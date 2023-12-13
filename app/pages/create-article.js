@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
-import { supabase } from '../utils/supabaseClient';
 import Layout from '../components/Layout';
+import UserContext from '../components/UserContext'
+import { useContext } from 'react';
 
 
 const ReactQuill = React.lazy(() => import('react-quill'));
@@ -12,23 +13,20 @@ export default function CreateArticle() {
   const [description, setDescription] = useState('');
   const [content, setContent] = useState('');
   const [slug, setSlug] = useState('');
-  const [user, setUser] = useState(null);
 
   const [loading, setLoading] = useState(true);
   const router = useRouter();
 
-  useEffect(() => {
-    const session = supabase.auth.getSession();
+  const { user, supabase } = useContext(UserContext);
 
-    if (session) {
+  useEffect(() => {
+    
+
+    if (user) {
       setLoading(false);
     } else {
       router.push('/login');
     }
-
-    supabase.auth.onAuthStateChange((_event, session) => {
-      setUser(session?.user || null);
-    });
 
   }, [router]);
 
@@ -54,7 +52,7 @@ export default function CreateArticle() {
   };
 
   if (loading) {
-    return <p>Loading...</p>; 
+    return <p>Loading...</p>;
   }
 
   return (
@@ -94,7 +92,7 @@ export default function CreateArticle() {
                 <ReactQuill
                   value={content}
                   onChange={setContent}
-                  theme="snow" // Choose a theme that suits your design
+                  theme="snow"
                   modules={{
                     toolbar: [
                       [{ 'header': '1' }, { 'header': '2' }, { 'font': [] }],

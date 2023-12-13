@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import { supabase } from '../utils/supabaseClient'; // Import supabase from the correct location
 import Layout from '../components/Layout.js';
+import UserContext from '../components/UserContext'
+import { useContext } from 'react';
 
 export default function Page() {
   const [firstName, setFirstName] = useState('');
@@ -9,10 +10,12 @@ export default function Page() {
   const [contactMessage, setContactMessage] = useState('');
   const [confirmationMessage, setConfirmationMessage] = useState(null);
 
+  const { supabase } = useContext(UserContext);
+
+
   const onSubmit = async (e) => {
     e.preventDefault();
 
-    // Use the correct supabase client imported from '../utils/supabaseClient'
     const { data, error } = await supabase.from('contacts').insert([
       { firstname: firstName, lastname: lastName, email: email, message: contactMessage }
     ]);

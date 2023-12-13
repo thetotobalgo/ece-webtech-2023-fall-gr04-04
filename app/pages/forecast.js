@@ -15,7 +15,7 @@ const Forecast = () => {
             try {
                 const response = await fetch(`https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=${params}`, {
                     headers: {
-                        'Authorization': 'dae01eb6-9224-11ee-950b-0242ac130002-dae01f38-9224-11ee-950b-0242ac130002' // Replace with your actual API key
+                        'Authorization': 'dae01eb6-9224-11ee-950b-0242ac130002-dae01f38-9224-11ee-950b-0242ac130002'
                     }
                 });
 

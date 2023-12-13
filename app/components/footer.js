@@ -1,6 +1,5 @@
 import Link from 'next/link';
-import { useTheme } from '../context/themeContext';
-
+import { useTheme } from './themeContext';
 
 
 const Footer = () => {

@@ -1,38 +1,19 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import { useState, useEffect } from 'react';
-import { supabase } from '../utils/supabaseClient';
 import md5 from 'md5';
-import { useTheme } from '../context/themeContext';
+import { useContext } from 'react';
+import { useTheme } from './themeContext';
+import UserContext from './UserContext';
+
 
 
 const Header = () => {
-  const [user, setUser] = useState(null);
+
   const [searchTerm, setSearchTerm] = useState('');
   const [searchResults, setSearchResults] = useState([]);
-
   const { toggleTheme } = useTheme();
+  const { user, logout, supabase } = useContext(UserContext);
 
-
-  useEffect(() => {
-    const session = supabase.auth.getSession();
-    setUser(session?.user || null);
-
-    const { data: authListener } = supabase.auth.onAuthStateChange((event, session) => {
-      setUser(session?.user || null);
-    });
-
-    return () => {
-      if (authListener?.unsubscribe) {
-        authListener.unsubscribe();
-      }
-    };
-  }, []);
-
-  const signOut = async () => {
-    await supabase.auth.signOut();
-    setUser(null);
-  };
 
   const handleSearchChange = (e) => {
     setSearchTerm(e.target.value);
@@ -42,6 +23,8 @@ const Header = () => {
       setSearchResults([]);
     }
   };
+
+  //Search articles 
 
   const searchArticles = async (term) => {
     const { data, error } = await supabase
@@ -55,6 +38,8 @@ const Header = () => {
       setSearchResults(data);
     }
   };
+
+  //Retrieve gravatar picture url
 
   const getGravatarUrl = (email) => {
     const hash = md5(email.trim().toLowerCase());
@@ -101,14 +86,16 @@ const Header = () => {
               ))}
             </div>
           )}
+
+
         </div>
 
         <div className="flex items-center">
           {user ? (
             <div className="flex items-center">
 
-              <button onClick={signOut} className="hover:text-gray-600 px-3 cursor-pointer">
-                Log out
+              <button onClick={logout} className="hover:text-gray-600 px-3 cursor-pointer">
+                Sign out
               </button>
               <Link href="/profile">
                 <img

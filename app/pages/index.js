@@ -1,17 +1,15 @@
 import Layout from '../components/Layout';
 import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
-import { supabase } from '../utils/supabaseClient';
-
+import UserContext from '../components/UserContext'
+import { useContext } from 'react';
 
 export default function Home() {
   const [recentArticles, setRecentArticles] = useState([]);
-  const [user, setUser] = useState(null);
+  const { supabase } = useContext(UserContext);
+
 
   useEffect(() => {
-    const session = supabase.auth.getSession();
-    setUser(session?.user || null);
-
     fetchArticles();
   }, []);
 
@@ -32,9 +30,6 @@ export default function Home() {
 
   return (
     <Layout>
-
-
-
       <section className="text-center my-10">
         <h1 className="text-4xl font-bold my-4">Welcome to Surf News</h1>
         <p className="text-xl my-4">Discover insightful articles about the discipline.</p>
@@ -63,6 +58,5 @@ export default function Home() {
     </Layout>
   );
 }
-
 
 

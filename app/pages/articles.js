@@ -1,19 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/router'; // Make sure you import useRouter
-import { supabase } from '../utils/supabaseClient';
+import { useRouter } from 'next/router';
+
 import Layout from '../components/Layout';
+
+import UserContext from '../components/UserContext'
+import { useContext } from 'react';
 
 export default function Articles() {
     const [articles, setArticles] = useState([]);
-    const [session, setSession] = useState(null);
-    const router = useRouter(); // Instantiate the useRouter hook
+    const router = useRouter(); 
 
+    const { user, supabase } = useContext(UserContext);
+
+
+    //A revoir les use effects
     useEffect(() => {
-        supabase.auth.getSession().then(({ data: { session } }) => {
-            setSession(session);
-        });
-
         async function fetchData() {
             const { data, error } = await supabase
                 .from('articles')
@@ -36,7 +38,7 @@ export default function Articles() {
         <h1 className="text-4xl font-bold my-4 text-center">
             Surf World News Articles
         </h1>
-        {session && (
+        {user && (
             <div className="text-center mt-8">
                 <button
                     onClick={() => router.push('/create-article')}
@@ -66,4 +68,3 @@ export default function Articles() {
     </Layout>
     );
 }
-

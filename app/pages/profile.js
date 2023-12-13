@@ -1,26 +1,16 @@
 import Layout from '../components/Layout';
-import { useState, useEffect } from 'react';
-import { supabase } from '../utils/supabaseClient';
+import { useState } from 'react';
 import md5 from 'md5';
 
+import UserContext from '../components/UserContext'
+import { useContext } from 'react';
+
+
+
 export default function Profile() {
-    const [user, setUser] = useState(null);
     const [newPassword, setNewPassword] = useState('');
 
-    useEffect(() => {
-        const session = supabase.auth.getSession();
-        setUser(session?.user || null);
-
-        const { data: authListener } = supabase.auth.onAuthStateChange((event, session) => {
-            setUser(session?.user || null);
-        });
-
-        return () => {
-            if (authListener?.unsubscribe) {
-                authListener.unsubscribe();
-            }
-        };
-    }, []);
+    const { user, supabase } = useContext(UserContext);
 
     const getGravatarUrl = (email) => {
         const hash = md5(email.trim().toLowerCase());
@@ -38,7 +28,7 @@ export default function Profile() {
             });
             if (error) throw error;
             alert('Your password has been updated.');
-            setNewPassword(''); // Clear the password input
+            setNewPassword('');
         } catch (error) {
             alert(error.message);
         }

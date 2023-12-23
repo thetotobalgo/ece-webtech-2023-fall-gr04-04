@@ -1,112 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Surfer Game</title>
-<style>
-  canvas {
-    display: block;
-    margin: auto;
-    background-color: #87CEEB;
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Surfer Game</title>
+  <style>
+    canvas {
+      display: block;
+      margin: auto;
+      background-color: #87CEEB;
+    }
+  </style>
 </head>
+
 <body>
 
-<canvas id="gameCanvas" width="480" height="320"></canvas>
+  <canvas id="gameCanvas" width="480" height="320"></canvas>
 
-<script>
-  const canvas = document.getElementById('gameCanvas');
-  const ctx = canvas.getContext('2d');
+  <script>
+    const canvas = document.getElementById('gameCanvas');
+    const ctx = canvas.getContext('2d');
 
-  const surfer = {
-    x: canvas.width / 2,
-    y: canvas.height - 60,
-    width: 20,
-    height: 20,
-    color: 'black',
-    moveLeft: false,
-    moveRight: false
-  };
+    let score = 0;
+    let gameover = false;
 
-  const fish = {
-    x: Math.random() * canvas.width,
-    y: 0,
-    width: 30,
-    height: 10,
-    color: 'blue',
-    speed: 2
-  };
+    const surfer = {
+      x: canvas.width / 2,
+      y: canvas.height - 60,
+      width: 20,
+      height: 20,
+      color: 'black',
+      moveLeft: false,
+      moveRight: false
+    };
 
-  function drawSurfer() {
-    ctx.fillStyle = surfer.color;
-    ctx.fillRect(surfer.x, surfer.y, surfer.width, surfer.height);
-  }
+    const fish = {
+      x: Math.random() * canvas.width,
+      y: 0,
+      width: 30,
+      height: 10,
+      color: 'blue',
+      speed: 2
+    };
 
-  function drawFish() {
-    ctx.fillStyle = fish.color;
-    ctx.fillRect(fish.x, fish.y, fish.width, fish.height);
-  }
-
-  function moveSurfer() {
-    if (surfer.moveLeft && surfer.x > 0) {
-      surfer.x -= 5;
+    function drawSurfer() {
+      ctx.fillStyle = surfer.color;
+      ctx.fillRect(surfer.x, surfer.y, surfer.width, surfer.height);
     }
-    if (surfer.moveRight && surfer.x < canvas.width - surfer.width) {
-      surfer.x += 5;
-    }
-  }
 
-  function moveFish() {
-    fish.y += fish.speed;
-    if (fish.y > canvas.height) {
-      fish.y = -fish.height;
-      fish.x = Math.random() * (canvas.width - fish.width);
+    function drawFish() {
+      ctx.fillStyle = fish.color;
+      ctx.fillRect(fish.x, fish.y, fish.width, fish.height);
     }
-  }
 
-  function checkCollision() {
-    if (surfer.x < fish.x + fish.width &&
+    function moveSurfer() {
+      if (surfer.moveLeft && surfer.x > 0) {
+        surfer.x -= 5;
+      }
+      if (surfer.moveRight && surfer.x < canvas.width - surfer.width) {
+        surfer.x += 5;
+      }
+    }
+
+    function moveFish() {
+      fish.y += fish.speed;
+      if (fish.y > canvas.height) {
+        fish.y = -fish.height;
+        fish.x = Math.random() * (canvas.width - fish.width);
+        score++;
+      }
+    }
+
+    function checkCollision() {
+      if (surfer.x < fish.x + fish.width &&
         surfer.x + surfer.width > fish.x &&
         surfer.y < fish.y + fish.height &&
         surfer.y + surfer.height > fish.y) {
-      alert('Game Over');
-      fish.y = -fish.height;
+        gameover = true;
+      }
     }
-  }
 
-  function updateGame() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    moveSurfer();
-    moveFish();
-    drawSurfer();
-    drawFish();
-    checkCollision();
-    requestAnimationFrame(updateGame);
-  }
-
-  function keyDownHandler(e) {
-    if (e.key === 'Left' || e.key === 'ArrowLeft') {
-      surfer.moveLeft = true;
-    } else if (e.key === 'Right' || e.key === 'ArrowRight') {
-      surfer.moveRight = true;
+    function displayScore() {
+      ctx.font = '16px Arial';
+      ctx.fillStyle = 'black';
+      ctx.fillText('Score: ' + score, 8, 20);
     }
-  }
 
-  function keyUpHandler(e) {
-    if (e.key === 'Left' || e.key === 'ArrowLeft') {
-      surfer.moveLeft = false;
-    } else if (e.key === 'Right' || e.key === 'ArrowRight') {
-      surfer.moveRight = false;
+    function displayGameOver() {
+      ctx.font = '30px Arial';
+      ctx.fillStyle = 'red';
+      ctx.fillText('Game Over', canvas.width / 2 - 90, canvas.height / 2);
+      ctx.font = '20px Arial';
+      ctx.fillText('Final Score: ' + score, canvas.width / 2 - 70, canvas.height / 2 + 30);
     }
-  }
 
-  document.addEventListener('keydown', keyDownHandler);
-  document.addEventListener('keyup', keyUpHandler);
+    function updateGame() {
+      if (!gameover) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        moveSurfer();
+        moveFish();
+        drawSurfer();
+        drawFish();
+        checkCollision();
+        displayScore();
+        requestAnimationFrame(updateGame);
+      } else {
+        displayGameOver();
+        setTimeout(restartGame, 5000); // Wait 5 seconds before restarting
+      }
+    }
 
-  updateGame();
-</script>
+    function restartGame() {
+      gameover = false;
+      score = 0;
+      surfer.x = canvas.width / 2; // Reset surfer position
+      fish.y = -fish.height;       // Reset fish position
+      updateGame();                // Restart the game loop
+    }
+
+
+    function keyDownHandler(e) {
+      if (e.key === 'Left' || e.key === 'ArrowLeft') {
+        surfer.moveLeft = true;
+      } else if (e.key === 'Right' || e.key === 'ArrowRight') {
+        surfer.moveRight = true;
+      }
+    }
+
+    function keyUpHandler(e) {
+      if (e.key === 'Left' || e.key === 'ArrowLeft') {
+        surfer.moveLeft = false;
+      } else if (e.key === 'Right' || e.key === 'ArrowRight') {
+        surfer.moveRight = false;
+      }
+    }
+
+    document.addEventListener('keydown', keyDownHandler);
+    document.addEventListener('keyup', keyUpHandler);
+
+    updateGame();
+  </script>
 
 </body>
+
 </html>

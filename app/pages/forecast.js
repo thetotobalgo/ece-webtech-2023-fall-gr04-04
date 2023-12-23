@@ -48,11 +48,12 @@ const Forecast = () => {
 
         <Layout>
             <div>
-                <h2>Erro fetching data</h2>
+                <h2>Error fetching data</h2>
             </div>
         </Layout>
 
     );
+
     const tableContainerStyle = {
         overflowY: 'scroll',
         maxHeight: '75vh',
@@ -75,7 +76,11 @@ const Forecast = () => {
     };
 
     return (
-        <Layout>
+        <Layout
+            title="use of an api"
+            description="Api that fetches forecast"
+        >
+
             <div>
                 <h2>Wave Forecast</h2>
                 <div style={tableContainerStyle}>

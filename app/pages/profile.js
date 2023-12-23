@@ -35,7 +35,11 @@ export default function Profile() {
     };
 
     return (
-        <Layout>
+        <Layout
+            title="Profile"
+            description="User profile"
+        >
+
             <h1 className="text-4xl font-bold my-4 text-center">Profile</h1>
 
             <div className="flex flex-col items-center justify-center">

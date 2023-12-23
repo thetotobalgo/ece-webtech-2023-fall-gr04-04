@@ -3,7 +3,11 @@ import Layout from '../components/Layout';
 
 export default function About() {
   return (
-    <Layout>
+    <Layout
+      title="About"
+      description="Information about the team"
+    >
+
 
       <h1 className="text-4xl font-bold my-4 text-center">About Surf News</h1>
       <p className="text-xl my-4">

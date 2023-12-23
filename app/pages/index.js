@@ -29,7 +29,11 @@ export default function Home() {
 
 
   return (
-    <Layout>
+    <Layout
+      title="Home page"
+      description="Home"
+    >
+
       <section className="text-center my-10">
         <h1 className="text-4xl font-bold my-4">Welcome to Surf News</h1>
         <p className="text-xl my-4">Discover insightful articles about the discipline.</p>

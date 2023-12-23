@@ -9,7 +9,7 @@ import { useContext } from 'react';
 
 export default function Articles() {
     const [articles, setArticles] = useState([]);
-    const router = useRouter(); 
+    const router = useRouter();
 
     const { user, supabase } = useContext(UserContext);
 
@@ -34,37 +34,41 @@ export default function Articles() {
 
 
     return (
-        <Layout>
-        <h1 className="text-4xl font-bold my-4 text-center">
-            Surf World News Articles
-        </h1>
-        {user && (
-            <div className="text-center mt-8">
-                <button
-                    onClick={() => router.push('/create-article')}
-                    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-                >
-                    Create New Article
-                </button>
+        <Layout
+            title="Article"
+            description="Acess the articles from the website"
+        >
+
+            <h1 className="text-4xl font-bold my-4 text-center">
+                Surf World News Articles
+            </h1>
+            {user && (
+                <div className="text-center mt-8">
+                    <button
+                        onClick={() => router.push('/create-article')}
+                        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                    >
+                        Create New Article
+                    </button>
+                </div>
+            )}
+            <div style={{ overflowY: 'scroll', maxHeight: '60vh' }}>
+                <ul className="list-none space-y-4">
+                    {articles.map(article => (
+                        <li key={article.id} className="border-b border-gray-200 py-4">
+                            <h2 className="text-2xl font-semibold">
+                                <Link href={`/articles/${article.slug}`}>
+                                    <span className="hover:text-blue-700">{article.title}</span>
+                                </Link>
+                            </h2>
+                            <p>{article.description}</p>
+                        </li>
+                    ))}
+                </ul>
             </div>
-        )}
-        <div style={{ overflowY: 'scroll', maxHeight: '60vh' }}>
-            <ul className="list-none space-y-4">
-                {articles.map(article => (
-                    <li key={article.id} className="border-b border-gray-200 py-4">
-                        <h2 className="text-2xl font-semibold">
-                            <Link href={`/articles/${article.slug}`}>
-                                <span className="text-blue-500 hover:text-blue-700">{article.title}</span>
-                            </Link>
-                        </h2>
-                        <p className="text-gray-700">{article.description}</p>
-                    </li>
-                ))}
-            </ul>
-        </div>
 
-        
 
-    </Layout>
+
+        </Layout>
     );
 }

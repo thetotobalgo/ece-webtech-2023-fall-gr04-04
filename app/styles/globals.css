@@ -13,13 +13,14 @@
 .light {
   background-color: white;
   color: black;
-  background-image: url('/bg5.png');
+  /* background-image: url('/bg5.png'); */
 }
+
 
 .dark {
   background-color: rgb(114, 104, 104);
   color: white;
-  background-image: url('/bg4.png');
+  /*background-image: url('/bg4.png');*/
 }
 
 

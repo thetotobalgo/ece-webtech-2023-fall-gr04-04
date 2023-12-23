@@ -19,16 +19,13 @@ export default function Layout({
       </Head>
 
       <div className={theme}>
-
-        <div className="flex flex-col min-h-screen" style={{ theme }}>
+        <div className="flex flex-col min-h-screen">
           <Header />
-          <main className="w-full flex-grow mx-auto overflow-y-auto px-10" style={{ maxHeight: 'calc(100vh - var(--header-height) - var(--footer-height))' }}>
-
+          <main className="w-full flex-grow mx-auto overflow-y-auto px-10 flex flex-col" style={{ maxHeight: 'calc(100vh - var(--header-height) - var(--footer-height))' }}>
             {children}
           </main>
           <Footer />
         </div>
-
       </div>
     </>
   );

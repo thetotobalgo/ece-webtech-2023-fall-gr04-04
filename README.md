@@ -5,99 +5,91 @@
 ## Production 
 
 - Vercel URL: https://ece-webtech-2023-fall-gr04-04.vercel.app/
-- Supabase project URL: https://app.supabase.com/project/...
+- Supabase project URL: https://supabase.com/dashboard/project/fwlvwvttabugqsrvzbkp
 
 ## Authors
 
 - Tom BALLET, group4
 - Mohamed BAKIR, group4
+- Thayri BOUAICH, group4
 
 ## Evaluation
 
 ### Mandatory Tasks
 
 * **Naming convention**
-  * Grade: 2
+  * Grade: *2*
   * Comments: *How did you implement the task*
-  * Task feedback: *Facultative, how did you find the task (difficulty, pertinence...)*
 * **Project structure**
-  * Grade: 2
+  * Grade: *2*
   * Comments: *How did you implement the task*
-  * Task feedback: *Facultative, how did you find the task (difficulty, pertinence...)*
 * **Git usage**
-  * Grade: *How many points you think you deserve*
+  * Grade: *2*
   * Comments: *How did you implement the task*
-  * Task feedback: *Facultative, how did you find the task (difficulty, pertinence...)*
 * **Code quality**
-  * Grade: *How many points you think you deserve*
+  * Grade: *4*
   * Comments: *How did you implement the task*
-  * Task feedback: *Facultative, how did you find the task (difficulty, pertinence...)*
 * **Design, UX, and content**
-  * Grade: *How many points you think you deserve*
+  * Grade: *4*
   * Comments: *How did you implement the task*
-  * Task feedback: *Facultative, how did you find the task (difficulty, pertinence...)*
 
 * **Home page**
-  * Grade: *How many points you think you deserve*
+  * Grade: *2*
   * Comments: *How did you implement the task*
-  * Task feedback: *Facultative, how did you find the task (difficulty, pertinence...)*
 * **Navigation**
-  * Grade: *How many points you think you deserve*
+  * Grade: *2*
   * Comments: *How did you implement the task*
-  * Task feedback: *Facultative, how did you find the task (difficulty, pertinence...)*
 * **Login and profile page**
-  * Grade: *How many points you think you deserve*
-  * Comments: *How did you implement the task*
-  * Task feedback: *Facultative, how did you find the task (difficulty, pertinence...)*
+  * Grade: *4*
+  * Comments: *The Auth library made it easy to do*
 * **Post creation and display**
-  * Grade: *How many points you think you deserve*
+  * Grade: *5*
   * Comments: *How did you implement the task*
-  * Task feedback: *Facultative, how did you find the task (difficulty, pertinence...)*
+  * Task feedback: *We don't have the save method*
 * **Comment creation and display**
-  * Grade: *How many points you think you deserve*
+  * Grade: *4*
   * Comments: *How did you implement the task*
-  * Task feedback: *Facultative, how did you find the task (difficulty, pertinence...)*
 * **Post modification and removal**
   * Grade: *How many points you think you deserve*
   * Comments: *How did you implement the task*
   * Task feedback: *Facultative, how did you find the task (difficulty, pertinence...)*
 * **Search**
-  * Grade: *How many points you think you deserve*
+  * Grade: *6*
   * Comments: *How did you implement the task*
   * Task feedback: *Facultative, how did you find the task (difficulty, pertinence...)*
 * **Use an external API**
-  * Grade: *How many points you think you deserve*
+  * Grade: *2*
   * Comments: *How did you implement the task*
   * Task feedback: *Facultative, how did you find the task (difficulty, pertinence...)*
 * **Resource access control**
-  * Grade: *How many points you think you deserve*
+  * Grade: *4*
   * Comments: *How did you implement the task*
   * Task feedback: *Facultative, how did you find the task (difficulty, pertinence...)*
 * **Account settings**
-  * Grade: *How many points you think you deserve*
+  * Grade: *1*
   * Comments: *How did you implement the task*
   * Task feedback: *Facultative, how did you find the task (difficulty, pertinence...)*
 * **WYSIWYG integration**
-  * Grade: *How many points you think you deserve*
+  * Grade: *2*
   * Comments: *How did you implement the task*
   * Task feedback: *Facultative, how did you find the task (difficulty, pertinence...)*
 * **Gravatar integration**
-  * Grade: *How many points you think you deserve*
+  * Grade: *2*
   * Comments: *How did you implement the task*
   * Task feedback: *Facultative, how did you find the task (difficulty, pertinence...)*
 * **Light/dark mode**
-  * Grade: *How many points you think you deserve*
+  * Grade: *2*
   * Comments: *How did you implement the task*
-  * Task feedback: *Facultative, how did you find the task (difficulty, pertinence...)*
+  * Task feedback: *We had a lot of problems with the style hierarchy*
 
 ### Bonus Tasks
 
-* ***Task title 1***   
-  * Grade: *How many points you think you deserve*
-  * Comments: *How did you implement the task*
-* ***Task title 2***   
-  * Grade: *How many points you think you deserve*
-  * Comments: *How did you implement the task*
+* ***Little game***   
+  * Grade: *1*
+  * Comments: *We add a little html game on the page*
+* ***Likes on posts***   
+  * Grade: *1*
+  * Comments: *We created a table articlelikes, with the post Id and the user email*
 
 ## Miscellaneous
 

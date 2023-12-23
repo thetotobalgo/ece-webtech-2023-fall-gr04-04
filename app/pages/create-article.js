@@ -56,7 +56,11 @@ export default function CreateArticle() {
   }
 
   return (
-    <Layout>
+    <Layout
+      title="Create an article"
+      description="Page to create and publish an article"
+    >
+
       <div className="container mx-auto px-4 py-8">
         <h1 className="text-4xl font-bold text-center mb-6">Create a New Article</h1>
         <form onSubmit={handleSubmit} className="max-w-lg mx-auto grid gap-6">

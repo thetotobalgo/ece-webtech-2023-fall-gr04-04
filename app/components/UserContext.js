@@ -10,7 +10,6 @@ export const ContextProvider = ({
 }) => {
   const supabase = useSupabaseClient()
   const supabaseUser = useUser()
-
   const [user, setUser] = useState()
   const [email, setEmail] = useState()
 

@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
+import { useState} from 'react';
 import md5 from 'md5';
 import { useContext } from 'react';
 import { useTheme } from './themeContext';
@@ -7,7 +7,7 @@ import UserContext from './UserContext';
 
 
 
-const Header = () => {
+export default function Header () {
 
   const [searchTerm, setSearchTerm] = useState('');
   const [searchResults, setSearchResults] = useState([]);
@@ -63,6 +63,9 @@ const Header = () => {
           </Link>
           <Link href="/about">
             <span className="hover:text-gray-600 px-3 cursor-pointer">About</span>
+          </Link>
+          <Link href="/game">
+            <span className="hover:text-gray-600 px-3 cursor-pointer">Game</span>
           </Link>
 
           
@@ -121,7 +124,4 @@ const Header = () => {
     </header>
   );
 };
-
-export default Header;
-
    

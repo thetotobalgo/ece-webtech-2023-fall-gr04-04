@@ -3,11 +3,8 @@
 @tailwind utilities;
 
 
-
-/* LIDHT/DARK Class*/
 .light, .dark {
-  transition: background-color 0.5s, color 0.5s; /* Adjust the duration as needed */
-  /* ... other styles ... */
+  transition: background-color 0.5s, color 0.5s;
 }
 
 .light {
@@ -24,9 +21,7 @@
 }
 
 
-
-
-/* Did not properly align so i found this solution for the WYSGWGSGSGWG*/
+/* Did not properly align so i found this solution for the WYSGWGSGSGWG maybe not pretty but this is the only thing that i found ahah*/
 
 .ql-align-right {
 	text-align: right;
@@ -37,5 +32,3 @@
 .ql-align-left {
 	text-align: left;
 }
-
-/*-------*/

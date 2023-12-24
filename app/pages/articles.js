@@ -22,32 +22,27 @@ export default function Articles() {
                 .select('*');
 
             if (error) {
-                console.error('Error fetching articles:', error);
+                console.error('Error fetching articles', error);
             } else {
                 setArticles(data);
             }
         }
-
+        
         fetchData();
     }, []);
 
 
 
     return (
-        <Layout
-            title="Article"
-            description="Acess the articles from the website"
-        >
+        <Layout title="Article" description="Acess the articles from the website" >
 
             <h1 className="text-4xl font-bold my-4 text-center">
                 Surf World News Articles
             </h1>
+
             {user && (
                 <div className="text-center mt-8">
-                    <button
-                        onClick={() => router.push('/create-article')}
-                        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-                    >
+                    <button onClick={() => router.push('/create-article')} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" >
                         Create New Article
                     </button>
                 </div>
@@ -66,8 +61,6 @@ export default function Articles() {
                     ))}
                 </ul>
             </div>
-
-
 
         </Layout>
     );

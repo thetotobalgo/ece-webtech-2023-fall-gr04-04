@@ -56,22 +56,40 @@ export default function Profile() {
                         </div>
 
                         {user.app_metadata.provider !== 'github' && (
-                            <div className="mb-4">
+                            <div className="mb-4 text-black">
                                 <input
                                     type="password"
                                     placeholder="New Password"
                                     className="w-full px-3 py-2 border rounded"
                                     value={newPassword}
                                     onChange={(e) => setNewPassword(e.target.value)}
+
                                 />
-                                <button
-                                    onClick={updatePassword}
-                                    className="w-full my-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-                                >
+                                <button onClick={updatePassword} className="w-full my-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" >
                                     Change Password
                                 </button>
+
+                                <input type="email" placeholder="New Email" className="w-full px-3 py-2 border rounded"/>
+                                <button className="w-full my-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                                    Change Email
+                                </button>
+
+                                <input type="name" placeholder="New Name" className="w-full px-3 py-2 border rounded"/>
+                                <button className="w-full my-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                                    Change Name
+                                </button>
+
+                                <button className="w-full my-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" >
+                                    <a href="https://fr.gravatar.com/">Change Gravatar</a>
+                                </button>
+
+
                             </div>
+
+
                         )}
+
+
 
                         {user.app_metadata.provider === 'github' && (
                             <p className="text-center text-red-500">

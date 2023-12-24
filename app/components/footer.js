@@ -1,9 +1,13 @@
 import Link from 'next/link';
 import { useTheme } from './themeContext';
 
+///Footer with the Contact form and the empty Terms of Services
 
-const Footer = () => {
+export default function Footer ()  {
+
+  //Use the theme colors
   const { toggleTheme } = useTheme();
+
   return (
     <footer>
       <div className="container mx-auto px-4 py-4 text-center">
@@ -15,5 +19,3 @@ const Footer = () => {
     </footer>
   )
 }
-
-export default Footer;

@@ -89,8 +89,6 @@ export default function Header () {
               ))}
             </div>
           )}
-
-
         </div>
 
         <div className="flex items-center">
@@ -115,7 +113,7 @@ export default function Header () {
           )}
           <button 
             onClick={toggleTheme} 
-            className="bg-blue-500 hover:bg-blue-700 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"
+            className="bg-blue-500 hover:bg-blue-700 py-2 px-4 rounded"
         >
             Night Mode
         </button>

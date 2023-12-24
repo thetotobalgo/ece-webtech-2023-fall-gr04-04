@@ -1,6 +1,12 @@
 # Blogging application - ECE Webtech project
 
-*presentation, introduction, credits, ...*
+*presentation, introduction, credits, ...
+
+
+
+
+- For the profile of the user, only the password change and the link to the gravatar website work, we also implemented fake name and email change.
+*
 
 ## Production 
 
@@ -9,8 +15,8 @@
 
 ## Authors
 
-- Tom BALLET, group4
-- Mohamed BAKIR, group4
+- Tom BALLET, group4, thetotobalgo/Moonwalkeuse
+- Mohamed BAKIR, group4, baksaad
 - Thayri BOUAICH, group4
 
 ## Evaluation
@@ -24,8 +30,8 @@
   * Grade: *2*
   * Comments: *How did you implement the task*
 * **Git usage**
-  * Grade: *2*
-  * Comments: *How did you implement the task*
+  * Grade: *1*
+  * Comments: *Because we worked a lot together, mainly Tom (thetotobalgo, Moonwalkeuse) pushed on the repository*
 * **Code quality**
   * Grade: *4*
   * Comments: *How did you implement the task*
@@ -54,7 +60,7 @@
   * Comments: *How did you implement the task*
   * Task feedback: *Facultative, how did you find the task (difficulty, pertinence...)*
 * **Search**
-  * Grade: *6*
+  * Grade: *4*
   * Comments: *How did you implement the task*
   * Task feedback: *Facultative, how did you find the task (difficulty, pertinence...)*
 * **Use an external API**
@@ -62,11 +68,11 @@
   * Comments: *How did you implement the task*
   * Task feedback: *Facultative, how did you find the task (difficulty, pertinence...)*
 * **Resource access control**
-  * Grade: *4*
+  * Grade: *6*
   * Comments: *How did you implement the task*
   * Task feedback: *Facultative, how did you find the task (difficulty, pertinence...)*
 * **Account settings**
-  * Grade: *1*
+  * Grade: *4*
   * Comments: *How did you implement the task*
   * Task feedback: *Facultative, how did you find the task (difficulty, pertinence...)*
 * **WYSIWYG integration**

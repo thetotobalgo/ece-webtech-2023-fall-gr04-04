@@ -1,12 +1,6 @@
 # Blogging application - ECE Webtech project
 
-*presentation, introduction, credits, ...
-
-
-
-
 - For the profile of the user, only the password change and the link to the gravatar website work, we also implemented fake name and email change.
-*
 
 ## Production 
 
@@ -25,73 +19,64 @@
 
 * **Naming convention**
   * Grade: *2*
-  * Comments: *How did you implement the task*
+  * Comments: *We followed naming convention from the nextjs documentation, we have an issue with the layout.js, we could not have the L from layout in capital letter*
 * **Project structure**
   * Grade: *2*
-  * Comments: *How did you implement the task*
+  * Comments: *We followed the nextjs convention aswell*
 * **Git usage**
   * Grade: *1*
   * Comments: *Because we worked a lot together, mainly Tom (thetotobalgo, Moonwalkeuse) pushed on the repository*
 * **Code quality**
   * Grade: *4*
-  * Comments: *How did you implement the task*
+  * Comments: *We indent using the command on visualcode*
 * **Design, UX, and content**
   * Grade: *4*
-  * Comments: *How did you implement the task*
+  * Comments: *We wanted a simple and minimalist desing, with simple colors and text*
 
 * **Home page**
   * Grade: *2*
-  * Comments: *How did you implement the task*
+  * Comments: *Basic home page with recent articles*
 * **Navigation**
   * Grade: *2*
-  * Comments: *How did you implement the task*
+  * Comments: *Simple header with all the accessible pages*
 * **Login and profile page**
   * Grade: *4*
   * Comments: *The Auth library made it easy to do*
 * **Post creation and display**
   * Grade: *5*
-  * Comments: *How did you implement the task*
-  * Task feedback: *We don't have the save method*
+  * Comments: *We added a button to created an article in the article page only if the user is authentificated. Then we add a simple form to add title, description, content and tags*
 * **Comment creation and display**
   * Grade: *4*
-  * Comments: *How did you implement the task*
+  * Comments: *User can add comments when an article is displayed and only if they are authentificated*
 * **Post modification and removal**
-  * Grade: *How many points you think you deserve*
-  * Comments: *How did you implement the task*
-  * Task feedback: *Facultative, how did you find the task (difficulty, pertinence...)*
+  * Grade: *2*
+  * Comments: *We can only delete an article*
 * **Search**
-  * Grade: *4*
-  * Comments: *How did you implement the task*
-  * Task feedback: *Facultative, how did you find the task (difficulty, pertinence...)*
+  * Grade: *3*
+  * Comments: *For the moment the search is done on the page and not on the supabase*
 * **Use an external API**
   * Grade: *2*
-  * Comments: *How did you implement the task*
-  * Task feedback: *Facultative, how did you find the task (difficulty, pertinence...)*
+  * Comments: *We have a little api call to get the waves predictions*
 * **Resource access control**
   * Grade: *6*
-  * Comments: *How did you implement the task*
-  * Task feedback: *Facultative, how did you find the task (difficulty, pertinence...)*
+  * Comments: *We followed the supabase tutorial*
 * **Account settings**
   * Grade: *4*
-  * Comments: *How did you implement the task*
-  * Task feedback: *Facultative, how did you find the task (difficulty, pertinence...)*
+  * Comments: *If we are logged using github, we can't change anything, if we are authentificated via email, we can change password. We also add a fake form to modify our name and email*
 * **WYSIWYG integration**
   * Grade: *2*
-  * Comments: *How did you implement the task*
-  * Task feedback: *Facultative, how did you find the task (difficulty, pertinence...)*
+  * Comments: *We used the ReactQuill library*
 * **Gravatar integration**
   * Grade: *2*
-  * Comments: *How did you implement the task*
-  * Task feedback: *Facultative, how did you find the task (difficulty, pertinence...)*
+  * Comments: *We created a method that retrieve the gravatar url from the user and display the picture*
 * **Light/dark mode**
   * Grade: *2*
-  * Comments: *How did you implement the task*
-  * Task feedback: *We had a lot of problems with the style hierarchy*
+  * Comments: *we implemented the ligh/dark mode using 2 css classes*
 
 ### Bonus Tasks
 
 * ***Little game***   
-  * Grade: *1*
+  * Grade: *0.5*
   * Comments: *We add a little html game on the page*
 * ***Likes on posts***   
   * Grade: *1*

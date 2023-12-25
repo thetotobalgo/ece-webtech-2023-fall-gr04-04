@@ -4,10 +4,10 @@ import React, { useState, useEffect } from 'react';
 import UserContext from '../components/UserContext'
 import { useContext } from 'react';
 
+
 export default function Home() {
   const [recentArticles, setRecentArticles] = useState([]);
   const { supabase } = useContext(UserContext);
-
 
   useEffect(() => {
     fetchArticles();
@@ -27,30 +27,33 @@ export default function Home() {
     }
   }
 
-
   return (
-    <Layout
-      title="Home page"
-      description="Home"
-    >
+    <Layout title="Home page" description="Home">
+      <section className="text-center my-10">
+        <h1 className="text-4xl font-bold my-4">Welcome to Surf News</h1>
+        <p className="text-xl my-4">Discover insightful articles about the discipline.</p>
+        <Link href="/articles">
+          <span className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            Explore Articles
+          </span>
+        </Link>
+      </section>
 
-      <section className="text-center">
-        <h2 className="text-3xl font-bold my-4">Recent Articles</h2>
-        <div className="flex flex-wrap justify-between space-x-4">
+      <section className="my-10">
+        <h2 className="text-3xl font-bold text-center my-4">Recent Articles</h2>
+        <div className="flex flex-col items-center space-y-8">
           {recentArticles.map(article => (
-            <article key={article.id} className="w-full md:w-1/2 lg:w-1/4">
-              <h3 className="text-2xl font-semibold mb-1">
+            <div key={article.id} className="w-full max-w-2xl">
+              <h3 className="text-2xl font-semibold mb-2">
                 <Link href={`/articles/${article.slug}`}>
-                  <span className="text-3xl hover:text-blue-700">{article.title}</span>
+                  <span className="hover:text-blue-700">{article.title}</span>
                 </Link>
               </h3>
               <p>{article.description}</p>
-            </article>
+            </div>
           ))}
         </div>
       </section>
     </Layout>
   );
 }
-
-

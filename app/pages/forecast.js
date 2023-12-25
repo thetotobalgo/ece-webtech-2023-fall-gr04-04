@@ -71,10 +71,6 @@ const Forecast = () => {
         textAlign: 'left'
     };
 
-    const theadStyle = {
-        backgroundColor: '#f2f2f2'
-    };
-
     return (
         <Layout
             title="use of an api"
@@ -85,7 +81,7 @@ const Forecast = () => {
                 <h2>Wave Forecast</h2>
                 <div style={tableContainerStyle}>
                     <table style={tableStyle}>
-                        <thead style={theadStyle}>
+                        <thead>
                             <tr>
                                 <th style={thTdStyle}>Time</th>
                                 <th style={thTdStyle}>Wave Height (meters)</th>

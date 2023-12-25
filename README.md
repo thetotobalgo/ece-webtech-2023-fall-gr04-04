@@ -2,6 +2,8 @@
 
 - For the profile of the user, only the password change and the link to the gravatar website work, we also implemented fake name and email change.
 
+- Most of the commits are by moonwalkeuse, this is on Tom's VS Code, we don't know why but each time we commited, even if we changed github account, it commited using this username. We gave you screenshot in the public repo to proove that this is us. Each time that we pushed using this computer, it is someone else account, we know this seems sketchy but we can prove it to you.
+
 ## Production 
 
 - Vercel URL: https://ece-webtech-2023-fall-gr04-04.vercel.app/
@@ -11,7 +13,7 @@
 
 - Tom BALLET, group4, thetotobalgo/Moonwalkeuse
 - Mohamed BAKIR, group4, baksaad
-- Thayri BOUAICH, group4
+- Thayri BOUAICH, group4, tom ballet hello
 
 ## Evaluation
 

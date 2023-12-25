@@ -20,7 +20,7 @@ export default function CreateArticle() {
   const { user, supabase } = useContext(UserContext);
 
   useEffect(() => {
-    
+
 
     if (user) {
       setLoading(false);
@@ -68,13 +68,14 @@ export default function CreateArticle() {
             <label className="block mb-2 text-sm font-medium text-gray-700">
               Title
               <input
-                type="text"
-                name="title"
+                type="title"
+                placeholder="Title"
+                className="w-full px-3 py-2 border rounded"
                 value={title}
-                onChange={(e) => setTitle(e.target.value)}
                 required
-                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-              />
+                onChange={(e) => setTitle(e.target.value)}
+
+              /> 
             </label>
           </div>
           <div>
@@ -82,19 +83,21 @@ export default function CreateArticle() {
               Description
               <textarea
                 name="description"
+                placeholder="Description"
+                className="w-full px-3 py-2 border rounded"
                 value={description}
-                onChange={(e) => setDescription(e.target.value)}
                 required
-                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                onChange={(e) => setDescription(e.target.value)}
               />
             </label>
           </div>
           <div>
-            <label className="block mb-2 text-sm font-medium text-gray-700">
+            <label className="block mb-2 text-sm font-medium text-gray-700 ">
               Content
               <React.Suspense fallback={<p>Loading react-quill...</p>}>
                 <ReactQuill
                   value={content}
+                  
                   onChange={setContent}
                   theme="snow"
                   modules={{
@@ -119,8 +122,8 @@ export default function CreateArticle() {
                 value={slug}
                 onChange={(e) => setSlug(e.target.value)}
                 required
-                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-              />
+                placeholder="Surf, ski, ece, tom"
+                className="w-full px-3 py-2 border rounded"              />
             </label>
           </div>
           <div>

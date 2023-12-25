@@ -34,16 +34,6 @@ export default function Home() {
       description="Home"
     >
 
-      <section className="text-center my-10">
-        <h1 className="text-4xl font-bold my-4">Welcome to Surf News</h1>
-        <p className="text-xl my-4">Discover insightful articles about the discipline.</p>
-        <Link href="/articles">
-          <span className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-            Get Started
-          </span>
-        </Link>
-      </section>
-
       <section className="text-center">
         <h2 className="text-3xl font-bold my-4">Recent Articles</h2>
         <div className="flex flex-wrap justify-between space-x-4">

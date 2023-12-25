@@ -71,7 +71,7 @@
   * Comments: *We created a method that retrieve the gravatar url from the user and display the picture*
 * **Light/dark mode**
   * Grade: *2*
-  * Comments: *we implemented the ligh/dark mode using 2 css classes*
+  * Comments: *we implemented the ligh/dark mode using 2 css classes and a toggle method*
 
 ### Bonus Tasks
 
@@ -82,7 +82,12 @@
   * Grade: *1*
   * Comments: *We created a table articlelikes, with the post Id and the user email*
 
+* ***Admin page***
+  * Grade: *0.5*
+  * Comments: *We have a small admin page that can see all the contact messages*
+
 ## Miscellaneous
+
 
 ### Course Feedback
 

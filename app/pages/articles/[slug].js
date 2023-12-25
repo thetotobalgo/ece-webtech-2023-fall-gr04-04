@@ -204,8 +204,17 @@ export default function Article() {
 
           {user && (
             <form onSubmit={handleCommentSubmit} className="mt-4">
-              <textarea className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" rows="3" value={newComment} onChange={(e) => setNewComment(e.target.value)} ></textarea>
-              <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-2" >
+
+              <textarea 
+                placeholder="Loved it !"
+                className="w-full px-3 py-2 border rounded leading-tight text-gray-700"
+                rows="3" 
+                value={newComment} 
+                onChange={(e) => setNewComment(e.target.value)}
+              >
+              </textarea>
+
+              <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2" >
                 Post Comment
               </button>
             </form>

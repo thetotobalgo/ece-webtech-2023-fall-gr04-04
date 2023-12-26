@@ -9,8 +9,7 @@ import { SessionContextProvider } from '@supabase/auth-helpers-react'
 import { useState } from 'react'
 
 
-
-function MyApp({ Component, pageProps }) {
+export default function MyApp({ Component, pageProps }) {
   const [supabaseClient] = useState(() => createPagesBrowserClient())
   return (
     <ThemeProvider>
@@ -29,6 +28,3 @@ function MyApp({ Component, pageProps }) {
     </ThemeProvider>
   );
 }
-
-export default MyApp;
-

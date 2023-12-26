@@ -11,9 +11,9 @@ export default function Article() {
 
   const [article, setArticle] = useState(null);
   const [comments, setComments] = useState([]);
-  const [newComment, setNewComment] = useState(''); // State for the comments
-  const [likedUsers, setLikedUsers] = useState([]); // State for liked users
-  const [isLiked, setIsLiked] = useState(false); // State to track if the user has liked the article
+  const [newComment, setNewComment] = useState('');
+  const [likedUsers, setLikedUsers] = useState([]);
+  const [isLiked, setIsLiked] = useState(false);
 
   const { user, email, supabase } = useContext(UserContext);
 
@@ -25,7 +25,6 @@ export default function Article() {
 
   const deleteArticle = async () => {
     try {
-      // Start a transaction
       const { data: deleteLikesData, error: deleteLikesError } = await supabase
         .from('articlelikes')
         .delete()
@@ -49,7 +48,7 @@ export default function Article() {
 
       router.push('/');
     } catch (error) {
-      console.error('Error deleting article and its dependencies:', error);
+      console.error('Error deleting article', error);
     }
   };
 
@@ -75,13 +74,10 @@ export default function Article() {
     if (error) {
       console.error('Error fetching article:', error);
     } else {
-      console.log("5");
       setArticle(data);
       setComments(data.comments);
       setLikedUsers(data.articlelikes.map((like) => like.email));
       setIsLiked(data.articlelikes.some((like) => like.email === email));
-      console.log("6");
-      console.log('Fetched likes:', data.articlelikes);
     }
   };
 
@@ -90,16 +86,12 @@ export default function Article() {
       if (isLiked) {
         const { data, error } = await supabase.from('articlelikes').delete().eq('email', email).eq('article_id', article.id);
       } else {
-        console.log("2");
-
         await supabase.from('articlelikes').upsert([{ article_id: article.id, email }]);
       }
 
-      console.log("3");
       setIsLiked((prevIsLiked) => !prevIsLiked);
 
 
-      console.log("4");
       fetchArticle();
     } catch (error) {
       console.error('Error toggling like:', error);
@@ -178,9 +170,9 @@ export default function Article() {
           <div className="border-t pt-4 mt-4">
             <h2 className="text-2xl font-bold mb-">Author</h2>
             <img src={getGravatarUrl(article.email)} alt="Author Gravatar" className="w-8 h-8 rounded-full" />
-            <p className="text-sm text-gray-600">Article by: {article.email}</p>
-            <p className="text-sm text-gray-500">
-              Published on: {article.created_at ? new Date(article.created_at).toLocaleDateString() : 'Unknown date'}
+            <p className="text-sm">Article by: {article.email}</p>
+            <p className="text-sm">
+              Published on: {article.created_at ? new Date(article.created_at).toLocaleDateString() : 'pas connu'}
             </p>
           </div>
         </section>
@@ -191,11 +183,11 @@ export default function Article() {
             <div>
               {comments.map((comment, index) => (
                 <div key={index} className="mb-4">
-                  <p className="text-sm text-gray-600">
-                    {comment.created_at ? new Date(comment.created_at).toLocaleString() : 'Unknown date'}
+                  <p className="text-sm">
+                    {comment.created_at ? new Date(comment.created_at).toLocaleString() : 'pas connu'}
                   </p>
                   <p>{comment.content}</p>
-                  <p className="text-sm text-gray-500">Posted by: {comment.email}</p>
+                  <p className="text-sm ">Posted by: {comment.email}</p>
                   <img src={getGravatarUrl(comment.email)} alt="User Gravatar" className="w-8 h-8 rounded-full" />
                 </div>
               ))}
@@ -205,11 +197,11 @@ export default function Article() {
           {user && (
             <form onSubmit={handleCommentSubmit} className="mt-4">
 
-              <textarea 
+              <textarea
                 placeholder="Loved it !"
                 className="w-full px-3 py-2 border rounded leading-tight text-gray-700"
-                rows="3" 
-                value={newComment} 
+                rows="3"
+                value={newComment}
                 onChange={(e) => setNewComment(e.target.value)}
               >
               </textarea>
@@ -219,7 +211,6 @@ export default function Article() {
               </button>
             </form>
           )}
-
         </section>
       </article>
     </Layout>

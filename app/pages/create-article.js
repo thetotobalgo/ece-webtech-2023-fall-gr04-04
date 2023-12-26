@@ -60,7 +60,6 @@ export default function CreateArticle() {
       title="Create an article"
       description="Page to create and publish an article"
     >
-
       <div className="container mx-auto px-4 py-8">
         <h1 className="text-4xl font-bold text-center mb-6">Create a New Article</h1>
         <form onSubmit={handleSubmit} className="max-w-lg mx-auto grid gap-6">
@@ -129,7 +128,7 @@ export default function CreateArticle() {
           <div>
             <button
               type="submit"
-              className="rounded-md py-2 px-4 text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
+              className="rounded-md py-2 px-4 text-white bg-blue-600 hover:bg-blue-700"
             >
               Create Article
             </button>

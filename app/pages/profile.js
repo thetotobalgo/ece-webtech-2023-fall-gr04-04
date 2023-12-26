@@ -1,11 +1,8 @@
 import Layout from '../components/Layout';
 import { useState } from 'react';
 import md5 from 'md5';
-
 import UserContext from '../components/UserContext'
 import { useContext } from 'react';
-
-
 
 export default function Profile() {
     const [newPassword, setNewPassword] = useState('');
@@ -82,14 +79,9 @@ export default function Profile() {
                                 <button className="w-full my-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" >
                                     <a href="https://fr.gravatar.com/">Change Gravatar</a>
                                 </button>
-
-
                             </div>
 
-
                         )}
-
-
 
                         {user.app_metadata.provider === 'github' && (
                             <p className="text-center text-red-500">

@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-
 import Layout from '../components/Layout';
-
 import UserContext from '../components/UserContext'
 import { useContext } from 'react';
 
@@ -12,7 +10,6 @@ export default function Articles() {
     const router = useRouter();
 
     const { user, supabase } = useContext(UserContext);
-
 
     //A revoir les use effects
     useEffect(() => {
@@ -30,7 +27,6 @@ export default function Articles() {
         
         fetchData();
     }, []);
-
 
 
     return (

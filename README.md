@@ -11,7 +11,7 @@
 
 ## Authors
 
-- Tom BALLET, group4, thetotobalgo/Moonwalkeuse ()
+- Tom BALLET, group4, thetotobalgo/Moonwalkeuse/totobalgo
 - Mohamed BAKIR, group4, baksaad
 - Thayri BOUAICH, group4, tom ballet hello
 
@@ -26,14 +26,14 @@
   * Grade: *2*
   * Comments: *We followed the nextjs convention aswell*
 * **Git usage**
-  * Grade: *1*
-  * Comments: *Because we worked a lot together, mainly Tom (thetotobalgo, Moonwalkeuse) pushed on the repository*
+  * Grade: *0.5*
+  * Comments: *Because we worked a lot together, mainly Tom (thetotobalgo, Moonwalkeuse) pushed on the repository. We also had a lot of problem with our git repo, so it is very ugly*
 * **Code quality**
   * Grade: *4*
   * Comments: *We indent using the command on visualcode*
 * **Design, UX, and content**
-  * Grade: *4*
-  * Comments: *We wanted a simple and minimalist desing, with simple colors and text*
+  * Grade: *3*
+  * Comments: *We wanted a simple and minimalist desing, with simple colors and text. The header is not responsive*
 
 * **Home page**
   * Grade: *2*
@@ -54,8 +54,8 @@
   * Grade: *2*
   * Comments: *We can only delete an article*
 * **Search**
-  * Grade: *3*
-  * Comments: *For the moment the search is done on the page and not on the supabase*
+  * Grade: *6*
+  * Comments: *Supabase search using websearch*
 * **Use an external API**
   * Grade: *2*
   * Comments: *We have a little api call to get the waves predictions*
@@ -97,4 +97,4 @@
 
 ### Project Reuse
 
-- [ ] We authorize the professors to use our project as an example for the next year students (facultative).
+- [x] We authorize the professors to use our project as an example for the next year students (facultative).

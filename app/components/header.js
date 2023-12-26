@@ -70,15 +70,15 @@ export default function Header() {
             <form className="flex items-center" onSubmit={(e) => e.preventDefault()}>
               <input
                 type="text"
-                placeholder="Search tags..."
-                className="px-2 py-1 border rounded-l"
+                placeholder="Search"
+                className="px-2 py-1 border rounded-l text-black"
                 value={searchTerm}
                 onChange={handleSearchChange}
               />
             </form>
 
             {searchResults.length > 0 && (
-              <div className="absolute top-full left-0 mt-1 border rounded bg-white z-10">
+              <div className="absolute top-full left-0 mt-1 border rounded z-10">
                 {searchResults.map((article) => (
                   <Link key={article.slug} href={`/articles/${article.slug}`}>
                     <span className="block px-4 py-2 hover:bg-gray-100">{article.title}</span>

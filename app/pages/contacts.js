@@ -51,9 +51,9 @@ export default function Contacts() {
                 type="text"
                 name="firstname"
                 value={firstName}
+                required
                 onChange={(e) => setFirstName(e.target.value)}
-                className="text-gray-700 mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-              />
+                className="w-full px-3 py-2 border rounded"              />
             </label>
           </div>
           <div>
@@ -63,9 +63,9 @@ export default function Contacts() {
                 type="text"
                 name="lastname"
                 value={lastName}
+                required
                 onChange={(e) => setLastName(e.target.value)}
-                className="text-gray-700 mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-              />
+                className="w-full px-3 py-2 border rounded"              />
             </label>
           </div>
           <div>
@@ -75,9 +75,9 @@ export default function Contacts() {
                 type="text"
                 name="email"
                 value={email}
+                required
                 onChange={(e) => setEmail(e.target.value)}
-                className="text-gray-700 mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-              />
+                className="w-full px-3 py-2 border rounded"              />
             </label>
           </div>
           <div>
@@ -86,14 +86,14 @@ export default function Contacts() {
               <textarea
                 name="message"
                 value={contactMessage}
+                required
                 onChange={(e) => setContactMessage(e.target.value)}
-                className="text-gray-700 mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-              />
+                className="w-full px-3 py-2 border rounded"              />
             </label>
           </div>
           <div>
             <button
-              className="rounded-md py-2 px-4 text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
+              className="rounded-md py-2 px-4 text-white bg-blue-600 hover:bg-blue-700"
             >
               Send
             </button>
@@ -101,7 +101,6 @@ export default function Contacts() {
         </form>
         {confirmationMessage &&
           <div
-            aria-label="Overflow below the drawer dialog"
             className="fixed inset-0 bg-black/80 flex items-center justify-center p-4"
             onClick={() => setConfirmationMessage(null)}
             role="dialog"

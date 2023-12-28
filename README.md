@@ -1,8 +1,7 @@
 # Blogging application - ECE Webtech project
 
 - For the profile of the user, only the password change and the link to the gravatar website work, we also implemented fake name and email change.
-
-- Most of the commits are by moonwalkeuse, this is on Tom's VS Code, we don't know why but each time we commited, even if we changed github account, it commited using this username. We gave you screenshot in the public repo to proove that this is us. Each time that we pushed using this computer, it is someone else account, we know this seems sketchy but we can prove it to you.
+- 
 
 ## Production 
 
@@ -27,17 +26,17 @@
   * Comments: *We followed the nextjs convention aswell*
 * **Git usage**
   * Grade: *0.5*
-  * Comments: *Because we worked a lot together, mainly Tom (thetotobalgo, Moonwalkeuse) pushed on the repository. We also had a lot of problem with our git repo, so it is very ugly*
+  * Comments: *Because we worked a lot together, mainly Tom (thetotobalgo, totobalgo and Moonwalkeuse) pushed on the repository. We also had a lot of problem with our git repo, so it is very ugly, i send you an email about the issue*
 * **Code quality**
   * Grade: *4*
-  * Comments: *We indent using the command on visualcode*
+  * Comments: *We indented the code using the command on visualcode*
 * **Design, UX, and content**
   * Grade: *3*
-  * Comments: *We wanted a simple and minimalist desing, with simple colors and text. The header is not responsive*
+  * Comments: *We wanted a simple and minimalist design, with simple colors and text. The header is not responsive*
 
 * **Home page**
   * Grade: *2*
-  * Comments: *Basic home page with recent articles*
+  * Comments: *Basic home page with the 3 recent articles*
 * **Navigation**
   * Grade: *2*
   * Comments: *Simple header with all the accessible pages*
@@ -58,10 +57,10 @@
   * Comments: *Supabase search using websearch*
 * **Use an external API**
   * Grade: *2*
-  * Comments: *We have a little api call to get the waves predictions*
+  * Comments: *We have a little api call to get the waves predictions, really simple data visualisation, unfortunatly, we have only 10 api calls per day*
 * **Resource access control**
   * Grade: *6*
-  * Comments: *We followed the supabase tutorial*
+  * Comments: *We followed the supabase tutorial, the admin page is just front, there is no security check or anything, it was just for the bonus*
 * **Account settings**
   * Grade: *4*
   * Comments: *If we are logged using github, we can't change anything, if we are authentificated via email, we can change password. We also add a fake form to modify our name and email*
@@ -88,12 +87,21 @@
   * Grade: *0.5*
   * Comments: *We have a small admin page that can see all the contact messages*
 
+* Estimated grade : 56.5/60
+  
 ## Miscellaneous
 
+- Most of the commits are by moonwalkeuse, this is on Tom's VS Code, we don't know why but each time we commited, even if we changed github account, it commited using this username. We gave you screenshot in the public repo to proove that this is us. Each time that we pushed using this computer, it is someone else account, we know this seems sketchy but we can prove it to you. You can also check using fork, the account who pushed is either thetotobalgo, totobalgo or baksaad.
 
 ### Course Feedback
 
-*Your feedback about the course, what you liked, what you disliked, what you missed...*
+The best thing about this course is the wide range of skills it covers, from UX design and development to project management, giving us a comprehensive understanding of the web development process. 
+The entire group has responded well to the web technology course, which provides an engaging and enriching learning environment.
+The potential for skill reinforcement presented by the technical challenge of using only Next.js, Supabase, and Tailwind CSS was great. 
+Furthermore, the focus on professional development techniques—like documentation, efficient use of Git, and project structure was instructive. 
+Overall, the course found a good balance between theory and practical application. 
+Adding more practical workshops to reinforce course topics is the only suggestions for improvement me can make.
+
 
 ### Project Reuse
 

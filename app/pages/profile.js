@@ -66,12 +66,12 @@ export default function Profile() {
                                     Change Password
                                 </button>
 
-                                <input type="email" placeholder="New Email" className="w-full px-3 py-2 border rounded"/>
+                                <input type="email" placeholder="New Email" className="w-full px-3 py-2 border rounded" />
                                 <button className="w-full my-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                                     Change Email
                                 </button>
 
-                                <input type="name" placeholder="New Name" className="w-full px-3 py-2 border rounded"/>
+                                <input type="name" placeholder="New Name" className="w-full px-3 py-2 border rounded" />
                                 <button className="w-full my-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                                     Change Name
                                 </button>

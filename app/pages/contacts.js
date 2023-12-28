@@ -53,7 +53,7 @@ export default function Contacts() {
                 value={firstName}
                 required
                 onChange={(e) => setFirstName(e.target.value)}
-                className="w-full px-3 py-2 border rounded"              />
+                className="w-full px-3 py-2 border rounded" />
             </label>
           </div>
           <div>
@@ -65,7 +65,7 @@ export default function Contacts() {
                 value={lastName}
                 required
                 onChange={(e) => setLastName(e.target.value)}
-                className="w-full px-3 py-2 border rounded"              />
+                className="w-full px-3 py-2 border rounded" />
             </label>
           </div>
           <div>
@@ -77,7 +77,7 @@ export default function Contacts() {
                 value={email}
                 required
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full px-3 py-2 border rounded"              />
+                className="w-full px-3 py-2 border rounded" />
             </label>
           </div>
           <div>
@@ -88,7 +88,7 @@ export default function Contacts() {
                 value={contactMessage}
                 required
                 onChange={(e) => setContactMessage(e.target.value)}
-                className="w-full px-3 py-2 border rounded"              />
+                className="w-full px-3 py-2 border rounded" />
             </label>
           </div>
           <div>

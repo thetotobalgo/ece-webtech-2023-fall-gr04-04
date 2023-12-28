@@ -30,7 +30,7 @@ export default function Header() {
       .from('articles')
       .select('title, slug')
       .textSearch('slug', formattedTerm, {
-        type: 'websearch' 
+        type: 'websearch'
       });
 
     if (error) {
@@ -86,7 +86,7 @@ export default function Header() {
                 ))}
               </div>
             )}
-            
+
           </div>
         </div>
 

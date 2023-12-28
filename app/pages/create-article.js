@@ -74,7 +74,7 @@ export default function CreateArticle() {
                 required
                 onChange={(e) => setTitle(e.target.value)}
 
-              /> 
+              />
             </label>
           </div>
           <div>
@@ -96,7 +96,7 @@ export default function CreateArticle() {
               <React.Suspense fallback={<p>Loading react-quill...</p>}>
                 <ReactQuill
                   value={content}
-                  
+
                   onChange={setContent}
                   theme="snow"
                   modules={{
@@ -122,7 +122,7 @@ export default function CreateArticle() {
                 onChange={(e) => setSlug(e.target.value)}
                 required
                 placeholder="Surf, ski, ece, tom"
-                className="w-full px-3 py-2 border rounded"              />
+                className="w-full px-3 py-2 border rounded" />
             </label>
           </div>
           <div>

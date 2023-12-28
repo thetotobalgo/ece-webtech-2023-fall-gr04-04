@@ -11,7 +11,7 @@ export default function Page() {
   if (user) {
     router.push('/profile')
   }
-  
+
   return (
     <Layout
       title="Sign in"

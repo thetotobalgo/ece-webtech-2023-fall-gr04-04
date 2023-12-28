@@ -15,7 +15,7 @@ export default function About() {
       </p>
 
       <h2 className="text-3xl font-bold my-4">Our Team</h2>
-      
+
       <div className="space-y-4">
         <p><strong>Tom:</strong> Avid surfer and journalist, Tom combines his passion for the sport with his talent for storytelling.</p>
         <p><strong>Saad:</strong> With a keen eye for detail, Saad ensures that all our articles are accurate and up-to-date.</p>

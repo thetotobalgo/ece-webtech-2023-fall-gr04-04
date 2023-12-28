@@ -24,7 +24,7 @@ export default function Articles() {
                 setArticles(data);
             }
         }
-        
+
         fetchData();
     }, []);
 

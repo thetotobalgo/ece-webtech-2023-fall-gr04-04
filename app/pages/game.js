@@ -6,9 +6,9 @@ export default function Game() {
       title="Game"
       description="Fun game"
     >
-      
-        <iframe src="/SurferGame.html" width="100%" height="400px"></iframe>
-      
+
+      <iframe src="/SurferGame.html" width="100%" height="400px"></iframe>
+
     </Layout>
   )
 }

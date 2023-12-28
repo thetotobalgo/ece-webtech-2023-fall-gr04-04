@@ -13,7 +13,7 @@ export default function MyApp({ Component, pageProps }) {
   const [supabaseClient] = useState(() => createPagesBrowserClient())
   return (
     <ThemeProvider>
-      
+
       <SessionContextProvider
         supabaseClient={supabaseClient}
         initialSession={pageProps.initialSession}

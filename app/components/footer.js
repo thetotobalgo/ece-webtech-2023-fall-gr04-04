@@ -3,7 +3,7 @@ import { useTheme } from './themeContext';
 
 ///Footer with the Contact form and the empty Terms of Services
 
-export default function Footer ()  {
+export default function Footer() {
 
   //Use the theme colors
   const { toggleTheme } = useTheme();

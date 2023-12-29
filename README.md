@@ -1,7 +1,5 @@
 # Blogging application - ECE Webtech project
 
-- For the profile of the user, only the password change and the link to the gravatar website work, we also implemented fake name and email change.
-
 **User Authentication**: Utilizing Supabase for user authentication, visitors can sign in and out of your website. The `UserContext` manages the user state throughout the application, allowing for personalized experiences such as commenting on articles and liking content.
 
 **Article Display**:
@@ -26,7 +24,7 @@
 
 **Theme Toggling**: There is a feature for toggling the theme from light fo dark.
 
-**User Profile**: Users have access to a profile page.
+**User Profile**: Users have access to a profile page where they can change their password only.
 
 **Gravatar Integration**: The website integrates Gravatar for displaying user avatars based on their email addresses.
 
@@ -42,6 +40,8 @@
 - Thayri BOUAICH, group4, tom ballet hello
 
 ## Evaluation
+
+**Estimated grade : 56.5/60**
 
 ### Mandatory Tasks
 
@@ -113,8 +113,6 @@
 * ***Admin page***
   * Grade: *0.5*
   * Comments: *We have a small admin page that can see all the contact messages*
-
-* Estimated grade : 56.5/60
   
 ## Miscellaneous
 

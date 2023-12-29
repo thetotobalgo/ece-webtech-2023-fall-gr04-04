@@ -1,7 +1,34 @@
 # Blogging application - ECE Webtech project
 
 - For the profile of the user, only the password change and the link to the gravatar website work, we also implemented fake name and email change.
-- 
+
+**User Authentication**: Utilizing Supabase for user authentication, visitors can sign in and out of your website. The `UserContext` manages the user state throughout the application, allowing for personalized experiences such as commenting on articles and liking content.
+
+**Article Display**:
+   - **Fetching Articles**: Users can view a list of recent articles on the homepage, fetched from the Supabase database.
+   - **Article Details**: When clicking on an article, users are taken to a detailed view where they can read the full content of the article.
+
+**Article Creation**:
+   - **Article Form**: A form where users can input the title, content, tags and description.
+   - **Text Editor**: An interface for the content field where users can format their text, insert images, and possibly add other multimedia elements.
+
+**Comments**:
+   - **Viewing Comments**: Below each article, comments from other readers are displayed, each with a timestamp and the commenter's email.
+   - **Posting Comments**: Authenticated users can post new comments on articles.
+
+**Likes Feature**:
+   - **Viewing Likes**: Each article shows a list of users who have liked it, represented by their Gravatar images.
+   - **Liking/Unliking**: Authenticated users can like or unlike articles. This interaction updates the list of likes in real-time.
+
+**Author Section**: Articles include an author section that displays the author's Gravatar image, email, and the publication date of the article.
+
+**Search and Navigation**: Users can search for articles and navigate through different sections of the website, such as a forecast section and about page.
+
+**Theme Toggling**: There is a feature for toggling the theme from light fo dark.
+
+**User Profile**: Users have access to a profile page.
+
+**Gravatar Integration**: The website integrates Gravatar for displaying user avatars based on their email addresses.
 
 ## Production 
 

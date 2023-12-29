@@ -116,7 +116,7 @@
   
 ## Miscellaneous
 
-- Most of the commits are by moonwalkeuse, this is on Tom's VS Code, we don't know why but each time we commited, even if we changed github account, it commited using this username. We gave you screenshot in the public repo to proove that this is us. Each time that we pushed using this computer, it is someone else account, we know this seems sketchy but we can prove it to you. You can also check using fork, the account who pushed is either thetotobalgo, totobalgo or baksaad.
+- Most of the commits are by moonwalkeuse, this is on Tom's VS Code, we don't know why but each time we commited, even if we changed github account, it commited using this username. We gave you screenshot in the public repo and in the app folder to proove that this is us. Each time that we pushed using this computer, it is someone else account, we know this seems sketchy but we can prove it to you. You can also check using fork, the account who pushed is either thetotobalgo, totobalgo or baksaad. I think it could be something about ssh, the first times that we pushed something on the repo, someone helped us at school. It could be from here, if you have any questions, contact me (Tom BALLET), I can prove everything and explain all the code perfectly, obviously i did it. 
 
 ### Course Feedback
 
